@@ -1,0 +1,56 @@
+### set MPI_ROOT, MPI_ROOT_32, and MPI_ROOT_64
+ifeq "$(WIN)" "64"
+  ifeq "$(MPI_ROOT_64)" ""
+    ifeq "$(MPI_ROOT)" ""
+      MPI_ROOT = C:/Program Files/MPICH2
+    endif
+    MPI_ROOT_64 = $(MPI_ROOT)
+  else
+    MPI_ROOT = $(MPI_ROOT_64)
+  endif
+else
+  ifeq "$(MPI_ROOT_32)" ""
+    ifeq "$(MPI_ROOT)" ""
+      MPI_ROOT = C:/Program Files (x86)/MPICH2
+    endif
+    MPI_ROOT_32 = $(MPI_ROOT)
+  else
+    MPI_ROOT = $(MPI_ROOT_32)
+  endif
+endif
+
+### set MPI_LIB
+ifeq "$(WIN)" "64"
+  MPI_LIB = $(shell ${R_HOME}/bin${R_ARCH_BIN}/Rscript -e \
+              "source('../R/windows/find_mpi.r');cat(find.mpilib(64))")
+else
+  MPI_LIB = $(shell ${R_HOME}/bin${R_ARCH_BIN}/Rscript -e \
+              "source('../R/windows/find_mpi.r');cat(find.mpilib(32))")
+endif
+
+### MPI_LIB is still not found then set to the default.
+ifeq "$(MPI_LIB)" ""
+  MPI_LIB = $(MPI_ROOT)/lib
+endif
+
+### Set PKG_*
+PKG_CPPFLAGS = -I"$(MPI_ROOT)/include" -DMPI2 -DWIN
+PKG_LIBS = -L"$(MPI_LIB)" -lmpi
+
+### Start making here.
+all: $(SHLIB)
+	@$(CP) ../R/windows/zzz.r ../R/
+	@$(CP) ../R/windows/get_path.r ../R/
+	@if test "$(WIN)" != "64"; then \
+	  $(ECHO) "MPI_ROOT = $(MPI_ROOT)" > ../inst/Makeconf.32; \
+	  $(ECHO) "MPI_LIB = $(MPI_LIB)" >> ../inst/Makeconf.32; \
+	else \
+	  $(ECHO) "MPI_ROOT = $(MPI_ROOT)" > ../inst/Makeconf.64; \
+	  $(ECHO) "MPI_LIB = $(MPI_LIB)" >> ../inst/Makeconf.64; \
+	fi
+
+$(SHLIB): $(OBJECTS)
+
+clean:
+	@$(RM) *.o *.d *.rc *.so *.dll *.dylib *.a *.lib Makedeps Makevars \
+               $(SHLIB) $(OBJECTS)
