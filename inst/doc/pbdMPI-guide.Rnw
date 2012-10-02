@@ -11,16 +11,17 @@
 \author{
 \begin{minipage}{6in}
 \centering
-Wei-Chen Chen$^1$, George Ostrouchov$^1$, Drew Schmidt$^2$, \\
+Wei-Chen Chen$^1$, George Ostrouchov$^{1,2}$, Drew Schmidt$^2$, \\
 Pragneshkumar Patel$^2$, Hao Yu$^3$
 \end{minipage}
 \\
 \\
-$^1$Scientific Data Group, Computer Science and Mathematics Division, \\
+$^1$Computer Science and Mathematics Division, \\
 Oak Ridge National Laboratory, \\
 Oak Ridge, TN, USA \\
 \\
-$^2$University of Tennessee, \\
+$^2$Remote Data Analysis and Visualization Center,\\
+University of Tennessee, \\
 Knoxville, TN, USA \\
 \\
 $^3$University of Western Ontario, \\
@@ -89,11 +90,11 @@ London, Ontario, Canada \\
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\input{./pbdMPI-include/02-introduction}
-\input{./pbdMPI-include/03-performance}
-\input{./pbdMPI-include/04-faq}
-\input{./pbdMPI-include/05-windows}
-\input{./pbdMPI-include/06-analog}
+\input{./pbdMPI-include/01-introduction}
+\input{./pbdMPI-include/02-performance}
+\input{./pbdMPI-include/03-faq}
+\input{./pbdMPI-include/04-windows}
+\input{./pbdMPI-include/05-analog}
 
 \newpage
 \phantomsection

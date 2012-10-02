@@ -1,6 +1,6 @@
 ### These functions are supposed to run in SPMD, even when pbd.mode = "mw"
 
-spmd.sapply <- function(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE,
+pbdSapply <- function(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE,
     pbd.mode = c("mw", "spmd"), rank.source = .SPMD.CT$rank.root,
     comm = .SPMD.CT$comm){
   COMM.SIZE <- spmd.comm.size(comm)
@@ -37,7 +37,5 @@ spmd.sapply <- function(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE,
   }
 
   ret
-} # End of spmd.sapply().
-
-pbdSapply <- spmd.sapply
+} # End of pbdSapply().
 

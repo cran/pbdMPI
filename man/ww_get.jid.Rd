@@ -34,10 +34,10 @@
   \code{get.id} returns a vector containing job id for each individual
   processor if \code{all = FALSE}. While it returns a list containing all
   job id for all processor if \code{all = TRUE}. The list has length equal
-  to \code{COMM.SIZE}.
+  to \code{\link{COMM.SIZE}}.
 }
 \references{
-  High Performance Statistical Computing Website:
+  Programming with Big Data in R Website:
   \url{http://r-pbd.org/}
 }
 \author{

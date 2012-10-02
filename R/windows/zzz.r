@@ -13,15 +13,19 @@
     stop("pbdMPI is not loaded.")
   }
 
-  if(! exists(".__DISABLE_MPI_INIT__", envir = .GlobalEnv) ||
-      get(".__DISABLE_MPI_INIT__", envir = .GlobalEnv) == FALSE){
-    .Call("spmd_initialize", PACKAGE = "pbdMPI")
-    assign(".comm.size", pbdMPI:::spmd.comm.size(0L), envir = .GlobalEnv)
-    assign(".comm.rank", pbdMPI:::spmd.comm.rank(0L), envir = .GlobalEnv)
-  }
+  # if(! exists(".__DISABLE_MPI_INIT__", envir = .GlobalEnv)){
+  #   assign(".__DISABLE_MPI_INIT__", FALSE, envir = .GlobalEnv)
+  # }
+
+  .Call("spmd_initialize", PACKAGE = "pbdMPI")
+  .comm.size <- .Call("spmd_comm_size", 0L, PACKAGE = "pbdMPI")
+  .comm.rank <- .Call("spmd_comm_rank", 0L, PACKAGE = "pbdMPI")
+  assign(".comm.size", .comm.size, envir = .GlobalEnv)
+  assign(".comm.rank", .comm.rank, envir = .GlobalEnv)
 } # End of .onLoad().
 
 .onUnload <- function(libpath){
   pbdMPI:::spmd.finalize(mpi.finalize = FALSE)
   library.dynam.unload("pbdMPI", libpath)
 } # End of .onUnload().
+

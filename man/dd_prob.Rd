@@ -27,7 +27,7 @@
   An invisible state of MPI call is returned.
 }
 \references{
-  High Performance Statistical Computing Website:
+  Programming with Big Data in R Website:
   \url{http://r-pbd.org/}
 }
 \author{

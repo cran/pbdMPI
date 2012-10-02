@@ -70,7 +70,7 @@ For calling \code{spmd.allgatherv.*}:
   \code{\link{gather}}, \code{\link{allreduce}}, \code{\link{reduce}}.
 }
 \references{
-  High Performance Statistical Computing Website:
+  Programming with Big Data in R Website:
   \url{http://r-pbd.org/}
 }
 \author{

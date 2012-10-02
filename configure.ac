@@ -348,6 +348,9 @@ if test -z "${MPI_INCLUDE_PATH}" ; then
         MPITYPE="MPICH2"
       elif test -f ${MPI_ROOT}/lib64/libmpich.so; then
         MPITYPE="MPICH2"
+      elif test -f ${MPI_ROOT}/lib/libmpi.so; then
+        dnl Nautilus needs this
+        MPITYPE="MPT"
       fi
     fi
 
@@ -528,28 +531,23 @@ echo ">> MPI_DEFS = ${MPI_DEFS}"
 echo ">> MPI_INCL2 = ${MPI_INCL2}"
 echo ">> PKG_CPPFLAGS = ${PKG_CPPFLAGS}"
 echo ">> PKG_LIBS = ${PKG_LIBS}"
-dnl Dump all flags to file for post debugging
-echo "MPIRUN = ${MPIRUN}" > inst/Makeconf
-echo "MPIEXEC = ${MPIEXEC}" >> inst/Makeconf
-echo "ORTERUN = ${ORTERUN}" >> inst/Makeconf
-echo "TMP_INC = ${TMP_INC}" >> inst/Makeconf
-echo "TMP_LIB = ${TMP_LIB}" >> inst/Makeconf
-echo "MPI_ROOT = ${MPI_ROOT}" >> inst/Makeconf
-echo "MPITYPE = ${MPITYPE}" >> inst/Makeconf
-echo "MPI_INCLUDE_PATH = ${MPI_INCLUDE_PATH}" >> inst/Makeconf
-echo "MPI_LIBPATH = ${MPI_LIBPATH}" >> inst/Makeconf
-echo "MPI_LIBS = ${MPI_LIBS}" >> inst/Makeconf
-echo "MPI_DEFS = ${MPI_DEFS}" >> inst/Makeconf
-echo "MPI_INCL2 = ${MPI_INCL2}" >> inst/Makeconf
-echo "PKG_CPPFLAGS = ${PKG_CPPFLAGS}" >> inst/Makeconf
-echo "PKG_LIBS = ${PKG_LIBS}" >> inst/Makeconf
-
 
 dnl Start to substitute templates
+AC_SUBST(MPIRUN)
+AC_SUBST(MPIEXEC)
+AC_SUBST(ORTERUN)
+AC_SUBST(TMP_INC)
+AC_SUBST(TMP_LIB)
+AC_SUBST(MPI_ROOT)
+AC_SUBST(MPITYPE)
+AC_SUBST(MPI_INCLUDE_PATH)
+AC_SUBST(MPI_LIBPATH)
+AC_SUBST(MPI_LIBS)
+AC_SUBST(MPI_DEFS)
+AC_SUBST(MPI_INCL2)
 AC_SUBST(PKG_CPPFLAGS)
 AC_SUBST(PKG_LIBS)
 AC_OUTPUT(src/Makevars)
-AC_OUTPUT(R/get_path.r)
 
 AC_SUBST(MPI_LIBPATH)
 AC_SUBST(MPITYPE)

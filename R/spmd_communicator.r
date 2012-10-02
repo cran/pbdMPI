@@ -56,6 +56,14 @@ spmd.comm.free <- function(comm = .SPMD.CT$comm){
 comm.free <- spmd.comm.free
 
 spmd.init <- function(){
+  ### Check even ".__DISABLE_MPI_INIT" is set by external API.
+  # if(! exists(".__DISABLE_MPI_INIT__", envir = .GlobalEnv) ||
+  #    get(".__DISABLE_MPI_INIT__", envir = .GlobalEnv) != TRUE){
+  #   assign(".__DISABLE_MPI_INIT__", FALSE, envir = .GlobalEnv)
+  # }
+
+  ### We still need to initial memory for our own communicators.
+  ### Copy the COMM_WORLD to the comm 0.
   ret <- .Call("spmd_initialize", PACKAGE = "pbdMPI")
   assign(".comm.size", spmd.comm.size(), envir = .GlobalEnv)
   assign(".comm.rank", spmd.comm.rank(), envir = .GlobalEnv)
@@ -65,6 +73,11 @@ spmd.init <- function(){
 init <- spmd.init
 
 spmd.finalize <- function(mpi.finalize = .SPMD.CT$mpi.finalize){
+  ### Do not remove ".__DISABLE_MPI_INIT__", leave it in .GlobalEnv for later
+  ### uses.
+
+  ### Only free the memory. Manually shut down MPI by "mpi.finalize".
+  ### Let users take care of MPI shut down business.
   ret <- .Call("spmd_finalize", mpi.finalize, PACKAGE = "pbdMPI")
   invisible(ret)
 } # End of spmd.finalize().

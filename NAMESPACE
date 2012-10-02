@@ -2,9 +2,10 @@
 ### Since "libmpi.so" should be load before "pbdMPI.so".
 # useDynLib(pbdMPI)
 
-import(methods)
+import(methods, rlecuyer)
 
-exportPattern("^spmd.[[:alpha:]]+")
+exportPattern("^spmd\\.[[:alpha:]]+")
+exportPattern("^g\\.[[:alpha:]]+")
 
 exportMethods(
   "allgather",
@@ -64,12 +65,13 @@ export(
   "waitsome",
   "waitall",
 
-  ### "R/api_tool.r"
+  ### "R/api_*.r"
   "get.jid",
-
-  ### "R/api_apply.r"
   "pbdApply",
   "pbdLapply",
-  "pbdSapply"
+  "pbdSapply",
+  "comm.set.seed",
+  "comm.reset.seed",
+  "comm.end.seed"
 )
 
