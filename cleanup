@@ -12,8 +12,6 @@ rm -rf ./src/*.dll
 rm -rf ./src/*.a
 rm -rf ./src/*.rc
 rm -rf ./src/*.rds
-rm -rf ./src-i386
-rm -rf ./src-x64
-rm -rf ./R/get_path.r
+rm -rf ./src-*
+rm -rf ./inst/etc*
 rm -rf ./R/zzz.r
-rm -rf ./inst/Makeconf*

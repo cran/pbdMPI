@@ -67,7 +67,7 @@ For calling \code{spmd.scatterv.*}:
 \item{\code{signature(x = "raw", x.buffer = "raw", x.count = "integer")}}{}
 }}
 \references{
-  High Performance Statistical Computing Website:
+  Programming with Big Data in R Website:
   \url{http://r-pbd.org/}
 }
 \author{

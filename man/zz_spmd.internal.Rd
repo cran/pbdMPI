@@ -1,20 +1,12 @@
-\name{spmd.internal}
-\alias{spmd.apply}
-\alias{spmd.lapply}
-\alias{spmd.sapply}
-\alias{spmd.system.file}
-\alias{spmd.mkconf}
-\alias{spmd.pkg.cppflags}
-\alias{spmd.pkg.ldflags}
-\alias{spmd.cflags}
+\name{SPMD Internal Functions}
 \alias{spmd.allcheck.type}
 \alias{spmd.allgather.object}
 \alias{spmd.allgather.array}
 \alias{spmd.allgather.default}
+\alias{spmd.allgatherv.default}
 \alias{spmd.allgather.integer}
 \alias{spmd.allgather.double}
 \alias{spmd.allgather.raw}
-\alias{spmd.allgatherv.default}
 \alias{spmd.allgatherv.integer}
 \alias{spmd.allgatherv.double}
 \alias{spmd.allgatherv.raw}
@@ -47,10 +39,10 @@
 \alias{spmd.gather.object}
 \alias{spmd.gather.array}
 \alias{spmd.gather.default}
+\alias{spmd.gatherv.default}
 \alias{spmd.gather.integer}
 \alias{spmd.gather.double}
 \alias{spmd.gather.raw}
-\alias{spmd.gatherv.default}
 \alias{spmd.gatherv.integer}
 \alias{spmd.gatherv.double}
 \alias{spmd.gatherv.raw}
@@ -77,10 +69,10 @@
 \alias{spmd.scatter.object}
 \alias{spmd.scatter.array}
 \alias{spmd.scatter.default}
+\alias{spmd.scatterv.default}
 \alias{spmd.scatter.integer}
 \alias{spmd.scatter.double}
 \alias{spmd.scatter.raw}
-\alias{spmd.scatterv.default}
 \alias{spmd.scatterv.integer}
 \alias{spmd.scatterv.double}
 \alias{spmd.scatterv.raw}
@@ -97,8 +89,8 @@
 \alias{spmd.sendrecv.replace.double}
 \alias{spmd.sendrecv.replace.raw}
 \alias{spmd.hostinfo}
-\alias{spmd.print}
-\alias{spmd.cat}
+\alias{spmd.comm.print}
+\alias{spmd.comm.cat}
 \alias{spmd.probe}
 \alias{spmd.iprobe}
 \alias{spmd.get.sourcetag}
@@ -110,7 +102,7 @@
 \title{ All SPMD Internal Functions }
 \description{ All SPMD internal functions }
 \references{
-  High Performance Statistical Computing Website:
+  Programming with Big Data in R Website:
   \url{http://r-pbd.org/}
 }
 \author{

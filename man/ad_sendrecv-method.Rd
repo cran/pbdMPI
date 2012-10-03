@@ -52,7 +52,7 @@ For calling \code{spmd.sendrecv.*}:
 \item{\code{signature(x = "raw", x.buffer = "raw")}}{}
 }}
 \references{
-  High Performance Statistical Computing Website:
+  Programming with Big Data in R Website:
   \url{http://r-pbd.org/}
 }
 \author{

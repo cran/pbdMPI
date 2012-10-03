@@ -19,7 +19,7 @@ array.to.list <- function(jid, X, dim.X, MARGIN){
   ret
 } # End of array.to.list().
 
-spmd.apply <- function(X, MARGIN, FUN, ..., pbd.mode = c("mw", "spmd"),
+pbdApply <- function(X, MARGIN, FUN, ..., pbd.mode = c("mw", "spmd"),
     rank.source = .SPMD.CT$rank.root, comm = .SPMD.CT$comm){
   COMM.SIZE <- spmd.comm.size(comm)
   COMM.RANK <- spmd.comm.rank(comm)
@@ -55,7 +55,5 @@ spmd.apply <- function(X, MARGIN, FUN, ..., pbd.mode = c("mw", "spmd"),
   }
 
   ret
-} # End of spmd.apply().
-
-pbdApply <- spmd.apply
+} # End of pbdApply().
 

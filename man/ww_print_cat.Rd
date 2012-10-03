@@ -1,9 +1,9 @@
-\name{print and cat}
+\name{global print and cat}
 \alias{comm.print}
 \alias{comm.cat}
-\title{ Print and Cat Functions }
+\title{ Global Print and Cat Functions }
 \description{
-  The functions print or cat a variable from specified processors,
+  The functions globally print or cat a variable from specified processors,
   by default messages is shown on screen.
 }
 \usage{
@@ -44,7 +44,7 @@
   and the messages of the input variables is shown on screen by default.
 }
 \references{
-  High Performance Statistical Computing Website:
+  Programming with Big Data in R Website:
   \url{http://r-pbd.org/}
 }
 \author{

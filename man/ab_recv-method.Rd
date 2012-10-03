@@ -44,7 +44,7 @@ For calling \code{spmd.recv.*}:
 \item{\code{signature(x = "raw")}}{}
 }}
 \references{
-  High Performance Statistical Computing Website:
+  Programming with Big Data in R Website:
   \url{http://r-pbd.org/}
 }
 \author{

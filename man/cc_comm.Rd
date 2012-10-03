@@ -10,6 +10,8 @@
 \alias{init}
 \alias{finalize}
 \alias{comm.disconnect}
+\alias{COMM.SIZE}
+\alias{COMM.RANK}
 \title{ Communicator Functions }
 \description{
   The functions provide controls to communicators.
@@ -71,7 +73,7 @@
   Most function return an invisible state of MPI call.
 }
 \references{
-  High Performance Statistical Computing Website:
+  Programming with Big Data in R Website:
   \url{http://r-pbd.org/}
 }
 \author{

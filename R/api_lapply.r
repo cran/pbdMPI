@@ -4,7 +4,7 @@ list.to.list <- function(i, X){
   X[i]
 } # End of list.to.list().
 
-spmd.lapply <- function(X, FUN, ..., pbd.mode = c("mw", "spmd"),
+pbdLapply <- function(X, FUN, ..., pbd.mode = c("mw", "spmd"),
     rank.source = .SPMD.CT$rank.root, comm = .SPMD.CT$comm){
   COMM.SIZE <- spmd.comm.size(comm)
   COMM.RANK <- spmd.comm.rank(comm)
@@ -40,7 +40,5 @@ spmd.lapply <- function(X, FUN, ..., pbd.mode = c("mw", "spmd"),
   }
 
   ret
-} # End of spmd.lapply().
-
-pbdLapply <- spmd.lapply
+} # End of pbdLapply().
 

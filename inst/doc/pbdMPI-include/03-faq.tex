@@ -49,8 +49,8 @@
       you can utilize \pkg{pbdMPI} scripts inside
       \pkg{Rmpi}. \pkg{Rmpi} mainly focuses on Manager/Workers
       computing environments, but can run SPMD codes on workers only
-      with a few adjustments. See the HPSC website for details at
-      \url{http://r-pbd.org/}.
+      with a few adjustments. See the ``Programming with Big Data in R''
+      website for details at \url{http://r-pbd.org/}.
 
       Note that \pkg{pbdMPI} uses communicators different from
       \pkg{Rmpi}.  Be sure to free the memory correctly for both
@@ -150,27 +150,30 @@ finalize()
       by communicating with basic data types
       (\code{integer} and \code{double}) and avoiding serialization.
 
-\item {\bf\color{blue} Q:}
-      Can I disable the MPI initialization of \pkg{pbdMPI} when I call
-      \code{library(pbdMPI)}? \\
-      {\bf\color{blue} A:}
-      Yes, you can set a hidden variable \code{.__DISABLE_MPI_INIT__} in the
-      \code{.GlobalEnv} before calling \code{library(pbdMPI)}.
-      For example,
-\begin{Code}[title=SPMD R Script]
-assign(".__DISABLE_MPI_INIT__", TRUE, envir = .GlobalEnv)
-library(pbdMPI)
-ls(all.names = TRUE)
-init()
-ls(all.names = TRUE)
-finalize()
-\end{Code}
-
-To avoid some initialization issues of MPI, \pkg{pbdMPI} uses a
-different way than \pkg{Rmpi}. \pkg{pbdMPI} allows you to disable
-initializing communicators when loading the library, and later on you can
-call \code{init} to initialize or obtain communicators through
-\code{.__MPI_APTS__} as in the next question.
+%\item {\bf\color{blue} Q:}
+%      Can I disable the MPI initialization of \pkg{pbdMPI} when I call
+%      \code{library(pbdMPI)}? \\
+%      {\bf\color{blue} A:}
+%      Yes, you can set a hidden variable \code{.__DISABLE_MPI_INIT__} in the
+%      \code{.GlobalEnv} before calling \code{library(pbdMPI)}.
+%      For example,
+%\begin{Code}[title=SPMD R Script]
+%assign(".__DISABLE_MPI_INIT__", TRUE, envir = .GlobalEnv)
+%library(pbdMPI)
+%ls(all.names = TRUE)
+%init()
+%ls(all.names = TRUE)
+%finalize(mpi.finalize = FALSE)
+%\end{Code}
+%      Note that we are *NOT* supposed to kill MPI in the \code{finalize} step
+%      if MPI is initialized by external applications. But some memory allocated
+%      by \pkg{pbdMPI} has to be free, \code{mpi.finalize = FALSE} is set above.
+%
+%      To avoid some initialization issues of MPI, \pkg{pbdMPI} uses a
+%      different way than \pkg{Rmpi}. \pkg{pbdMPI} allows you to disable
+%      initializing communicators when loading the library, and later on you can
+%      call \code{init} to initialize or obtain communicators through
+%      \code{.__MPI_APTS__} as in the next question.
 
 \item {\bf\color{blue} Q:}
       Can \pkg{pbdMPI} take or export communicators? \\

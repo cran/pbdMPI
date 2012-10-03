@@ -14,7 +14,7 @@ spmd.hostinfo <- function(comm = .SPMD.CT$comm){
 
 comm.hostinfo <- spmd.hostinfo
 
-spmd.print <- function(x, all.rank = .SPMD.CT$print.all.rank,
+spmd.comm.print <- function(x, all.rank = .SPMD.CT$print.all.rank,
     rank.print = .SPMD.CT$rank.source, comm = .SPMD.CT$comm,
     quiet = FALSE, flush = TRUE, con = stdout(), ...){
   COMM.RANK <- spmd.comm.rank(comm)
@@ -58,11 +58,11 @@ spmd.print <- function(x, all.rank = .SPMD.CT$print.all.rank,
   spmd.barrier(comm)
 
   invisible()
-} # End of spmd.print().
+} # End of spmd.comm.print().
 
-comm.print <- spmd.print
+comm.print <- spmd.comm.print
 
-spmd.cat <- function(..., all.rank = .SPMD.CT$print.all.rank,
+spmd.comm.cat <- function(..., all.rank = .SPMD.CT$print.all.rank,
     rank.print = .SPMD.CT$rank.source, comm = .SPMD.CT$comm, quiet = FALSE,
     sep = " ", fill = FALSE, labels = NULL, append = FALSE,
     flush = TRUE, con = stdout()){
@@ -107,7 +107,7 @@ spmd.cat <- function(..., all.rank = .SPMD.CT$print.all.rank,
   spmd.barrier(comm)
 
   invisible()
-} # End of spmd.cat().
+} # End of spmd.comm.cat().
 
-comm.cat <- spmd.cat
+comm.cat <- spmd.comm.cat
 

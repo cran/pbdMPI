@@ -1,3 +1,8 @@
+2012-10-02: Ver. 0.1-1
+  * Make changes for Nautilus. Drop "pbdMPI:::* ideas" for other pbd packages.
+  * Make changes for pbdSLAP, pbdBASE, and pbdDMAT.
+  * Add seed functions.
+  * Add global sorting functions.
 
 ======================= Log Before Release =====================================
 2012-09-01:

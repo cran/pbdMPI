@@ -44,7 +44,7 @@ For calling \code{spmd.allreduce.*}:
 \item{\code{signature(x = "numeric", x.buffer = "numeric")}}{}
 }}
 \references{
-  High Performance Statistical Computing Website:
+  Programming with Big Data in R Website:
   \url{http://r-pbd.org/}
 }
 \author{
