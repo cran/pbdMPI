@@ -30,7 +30,7 @@
     for(i.lib in libs){
       ret <- try(dyn.load(i.lib), silent = TRUE)
       if(class(ret) != "try-error"){
-        assign(".__MPI_LIB__", i.lib, envir = .GlobalEnv)
+#        assign(".__MPI_LIB__", i.lib, envir = .GlobalEnv)
         break
       }
     }
@@ -38,8 +38,10 @@
 
   library.dynam("pbdMPI", pkgname, libname)
 
-  if(! is.loaded("spmd_initialize", PACKAGE = "pbdMPI")){
+  if(! is.loaded("pkg_initialize", PACKAGE = "pbdMPI")){
     stop("pbdMPI is not loaded.")
+  } else{
+    .Call("pkg_initialize", i.lib, PACKAGE = "pbdMPI")
   }
 
   # if(! exists(".__DISABLE_MPI_INIT__", envir = .GlobalEnv)){
@@ -47,10 +49,12 @@
   # }
 
   .Call("spmd_initialize", PACKAGE = "pbdMPI")
-  .comm.size <- .Call("spmd_comm_size", 0L, PACKAGE = "pbdMPI")
-  .comm.rank <- .Call("spmd_comm_rank", 0L, PACKAGE = "pbdMPI")
-  assign(".comm.size", .comm.size, envir = .GlobalEnv)
-  assign(".comm.rank", .comm.rank, envir = .GlobalEnv)
+  # .comm.size <- .Call("spmd_comm_size", 0L, PACKAGE = "pbdMPI")
+  # .comm.rank <- .Call("spmd_comm_rank", 0L, PACKAGE = "pbdMPI")
+  # assign(".comm.size", .comm.size, envir = .GlobalEnv)
+  # assign(".comm.rank", .comm.rank, envir = .GlobalEnv)
+
+  invisible()
 } # End of .onLoad().
 
 .onUnload <- function(libpath){
@@ -80,4 +84,6 @@
       ret <- try(dyn.unload(i.lib), silent = TRUE)
     }
   }
+
+  invisible()
 } # End of .onUnload().
