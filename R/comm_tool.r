@@ -1,6 +1,5 @@
-### Distributed quick sort.
+### S3 tool function except print() and cat() see "spmd_tool.r".
 
-### S3 functions.
 comm.any <- function(x, na.rm = FALSE, comm = .SPMD.CT$comm){
   ret <- spmd.allgather.integer(any(x, na.rm = na.rm),
                                 integer(comm.size(comm)), comm = comm)
@@ -12,3 +11,4 @@ comm.all <- function(x, na.rm = FALSE, comm = .SPMD.CT$comm){
                                 integer(comm.size(comm)), comm = comm)
   all(ret, na.rm = na.rm)
 } # End of comm.all().
+
