@@ -1,6 +1,6 @@
-d791728a073bc009b4ffaf00b7599855 *COPYING
-47db3d27ba0ca23707b8af1c824acbf4 *ChangeLog
-639915cecdd0f02f9540b8beb70548ec *DESCRIPTION
+e879eaad64aab8e1f8e63e298f5cea28 *COPYING
+5510b9facca3c30b6a4690af7dd0609f *ChangeLog
+8356d4b18d390cc34c6886fd94058176 *DESCRIPTION
 9ce4ce2080d366b3dcd88915d9e6f736 *INSTALL
 368b66f94814bef0a74cb962e67fef02 *INSTALL.win.bin
 f891a705d3d412086df8acb41a4892ad *INSTALL.win.src
@@ -8,7 +8,7 @@ aa0c65e1e2e92ff2f069fa521826a8d0 *NAMESPACE
 23c8b64c03fada3f9248a5e422e9b57e *R/api_apply.r
 049c601de648286f2e133d8460a512c7 *R/api_lapply.r
 2914130a7030e4c9a0a9285e89cb0b93 *R/api_sapply.r
-18b6b6e419f53c578068843e21006006 *R/api_tool.r
+7bdb06c0d4a9e3d744e794fc53509dcb *R/api_tool.r
 14bf2a95119f00a33f118cd130fef2b4 *R/comm_errors.r
 fa99fc1bcaf52998de9c1688f8a91874 *R/comm_seed.r
 85a455178a0393d78084c57a4a9d2bc3 *R/comm_sort.r
@@ -47,7 +47,7 @@ f4075cef1389cb629856d0c24342da90 *cleanup
 b451875d4ec91811ca4191dbdc61b864 *configure
 ac1cf863fd9ddc06ab7d02bb33c5164a *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
-cb7bdfb49e7f95d82ef9c6c7c7734060 *data/control.r
+b67b7e9e5ba89f6da462ba394e7e43d5 *data/control.r
 d47e0e59daddee3d81b5e59a4a9ad94f *demo/00Index
 f9085c00c2d66436949f9bcbf564ec3a *demo/allgather.r
 408c909119c350c1cb1bfe28e1846c56 *demo/allreduce.r
@@ -64,7 +64,7 @@ a44c872a0e024da6a40d708b71ac3506 *demo/seed.r
 ccaade66dedc90c2ec294f11e6f6e28c *inst/CITATION
 912cce0090644e18839613d0d5e759fd *inst/doc/build_pdf.sh
 54f4dd40250548ef095b7a452d52345d *inst/doc/pbdMPI-guide.Rnw
-9348e975851ff6c8b8408d04fd696f5c *inst/doc/pbdMPI-guide.pdf
+b7a3c691d5f91f0a33828b3bfb688701 *inst/doc/pbdMPI-guide.pdf
 6e3ca1e66839ff78adb64b3c76cbbfb7 *inst/doc/pbdMPI-include/00-preamble.tex
 041ce8f25a51ae12b9a11b7770626f77 *inst/doc/pbdMPI-include/01-acknowledgement.tex
 b2c9df33f8c993c32eda8f8ec0e14fa7 *inst/doc/pbdMPI-include/01-copyright.tex
@@ -132,7 +132,7 @@ f52e153b0d002460144f6e570093363e *inst/examples/test_spmd/allgather.r
 a2c449afbf5e30d66c6833311f6ce7f1 *inst/examples/test_spmd/sendrecv.r
 b9980dc04a1ee3930859a0064f4a826d *inst/examples/test_spmd/sendrecv_replace.r
 0d9944538dc5a19ed8a9055666219b74 *man/00_pbdMPI-package.Rd
-9d044889915f64ec2b3bfce85f3a1477 *man/11_d.control.Rd
+666fe4e81c202a7425584b27a70128ac *man/11_d.control.Rd
 82d4b5b32034e60f37d0745b8fa76967 *man/aa_allgather-method.Rd
 3d3cd3311da2789cbf91324891b563ff *man/aa_allreduce-method.Rd
 14428c4304460389eeaa6469161a795c *man/aa_bcast-method.Rd
@@ -150,7 +150,7 @@ b5118be548b5b020c68dfec1dc2fdcb4 *man/ad_sendrecv.replace-method.Rd
 3a43b8cf3811a69e5e4fd93380a8874b *man/dd_info.Rd
 d905ace6faeef937299fed9838059084 *man/dd_prob.Rd
 4f33b4924902f7515cba5cf61ec37260 *man/dd_wait.Rd
-9881257b548664a3464d27ffd6bfb36a *man/ww_get.jid.Rd
+72ba692642e772d6455be61f188c950d *man/ww_get.jid.Rd
 9ef7e97cd4bf1daef20b60fbf3d71a58 *man/ww_print_cat.Rd
 4eb385f214621f03ed1cd257d7c716b8 *man/ww_seed.Rd
 4b777c2813af3b6612cc7ded7aad4062 *man/xx_comm.sort.Rd
