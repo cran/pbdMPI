@@ -5,7 +5,7 @@
   This function obtains job id which can be used to divide jobs.
 }
 \usage{
-  get.jid(n, method = .SPMD.CT$divide.method, all = FALSE,
+  get.jid(n, method = .SPMD.CT$divide.method[1], all = FALSE,
           comm = .SPMD.CT$comm)
 }
 \arguments{
@@ -37,7 +37,7 @@
   for rank 3.
 }
 \value{
-  \code{get.id} returns a vector containing job id for each individual
+  \code{get.id()} returns a vector containing job id for each individual
   processor if \code{all = FALSE}. While it returns a list containing all
   job id for all processor if \code{all = TRUE}. The list has length equal
   to \code{\link{COMM.SIZE}}.
@@ -51,7 +51,7 @@
   Drew Schmidt, Pragneshkumar Patel, and Hao Yu.
 }
 \seealso{
-  \code{\link{task.pull}}.
+  \code{\link{task.pull}()}.
 }
 \examples{
 \dontrun{
@@ -59,7 +59,7 @@
 # > mpiexec -np 4 Rscript demo.r
 
 ### Initial
-library(pbdMPI, quiet = TRUE)
+library(pbdMPI, quietly = TRUE)
 init()
 
 ### Examples

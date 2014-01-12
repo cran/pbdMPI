@@ -2,7 +2,7 @@
 
 pbdSapply <- function(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE,
     pbd.mode = c("mw", "spmd"), rank.source = .SPMD.CT$rank.root,
-    comm = .SPMD.CT$comm){
+    comm = .SPMD.CT$comm, bcast = FALSE){
   COMM.SIZE <- spmd.comm.size(comm)
   COMM.RANK <- spmd.comm.rank(comm)
 
@@ -36,6 +36,19 @@ pbdSapply <- function(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE,
     ret <- spmd.gather.object(ret, rank.dest = rank.source, comm = comm)
     if(COMM.RANK != rank.source){
       ret <- NULL
+    }
+
+    if(bcast){
+      ret <- spmd.bcast.object(ret, rank.source = rank.source, comm = comm)
+    }
+  } else{
+    if(bcast){
+      ret <- spmd.allgather.object(ret, comm = comm, unlist = FALSE)
+      tmp <- list()
+      for(i in 1:length(ret)){
+        tmp <- c(tmp, ret[[i]])
+      }
+      ret <- tmp
     }
   }
 

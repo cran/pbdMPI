@@ -6,7 +6,7 @@ and should not be construed to represent any determination or
 policy of University, Agency, and National Laboratory.
 
 This document is written to explain the main
-functions of \pkg{pbdMPI}~\citep{Chen2012}, version 0.2-1.
+functions of \pkg{pbdMPI}~\citep{Chen2012}, version 0.2-2.
 Every effort will be made to ensure future versions are consistent with
 these instructions, but features in later versions may not be explained
 in this document.
@@ -14,7 +14,7 @@ in this document.
 Information about the functionality of this package,
 and any changes in future versions can be found on website:
 ``Programming with Big Data in R'' at
-\url{http://r-pbd.org/}.
+\url{http://r-pbd.org/}~\citep{pbdR2012}.
 %More discussion about parallel computing in \proglang{R}~\citep{Rcore}
 %can be found in~\citet{Schmidberger2009}.
 
@@ -92,9 +92,14 @@ next.  Section~\ref{sec:performance} gives a short example for
 comparing performance of \pkg{pbdMPI} and \pkg{Rmpi}~\citep{Yu2002}.
 In Section~\ref{sec:faqs}, a few quick answers for questions are
 given.  Section~\ref{sec:windows_systems} provides settings for
-Windows environments.  Finally, in Section~\ref{sec:analog_examples},
+Windows environments.  In Section~\ref{sec:analog_examples},
 two examples from \pkg{parallel} are shown as SPMD \pkg{pbdMPI}
-programs.
+programs. Section~\ref{sec:long_vector} discusses long vector support
+and communication in \pkg{pbdMPI} as an extension from \proglang{R}.
+Finally, in Section~\ref{sec:simple_io}, some simple input and output
+methods between regular text/csv/csv2 files and \code{data.frame} are
+introduced.
+
 
 \subsection[System Requirements]{System Requirements}
 \label{sec:system_requirements}
