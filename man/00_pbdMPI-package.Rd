@@ -37,9 +37,9 @@
   See the package source file \code{pbdMPI/configure} for details.
 
   After loading \code{library(pbdMPI)}, the standard process starts from
-  \code{\link{init}} which set two global variables \code{.comm.size}
+  \code{\link{init}()} which set two global variables \code{.comm.size}
   and \code{.comm.rank}. The standard process should end
-  with \code{\link{finalize}}.
+  with \code{\link{finalize}()}.
 
   Most functions are assumed to run in SPMD, i.e.
   in batch mode. Ideally, most codes run with \code{mpiexec} and \code{Rscript},
@@ -60,7 +60,10 @@
   \code{pbdMPI/inst/examples/test_long_vector/} \tab long vector examples \cr
 }
   where \code{test_long_vector} needs to recompile with setting
-  \code{#define MPI_LONG_DEBUG 1} in \code{pbdMPI/src/pkg_constant.h}.
+
+  \code{#define MPI_LONG_DEBUG 1}
+
+  in \code{pbdMPI/src/pkg_constant.h}.
 
   The current version is mainly written and tested under OpenMPI
   environments in Linux system (xubuntu-11.04). Also, it is tested
@@ -76,12 +79,12 @@
   Drew Schmidt, Pragneshkumar Patel, and Hao Yu.
 }
 \seealso{
-  \code{\link{allgather}},
-  \code{\link{allreduce}},
-  \code{\link{bcast}},
-  \code{\link{gather}},
-  \code{\link{reduce}},
-  \code{\link{scatter}}.
+  \code{\link{allgather}()},
+  \code{\link{allreduce}()},
+  \code{\link{bcast}()},
+  \code{\link{gather}()},
+  \code{\link{reduce}()},
+  \code{\link{scatter}()}.
 }
 \examples{
 \dontrun{

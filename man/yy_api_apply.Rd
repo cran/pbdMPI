@@ -10,22 +10,24 @@
   pbdApply(X, MARGIN, FUN, ..., pbd.mode = c("mw", "spmd"),
            rank.source = .SPMD.CT$rank.root, comm = .SPMD.CT$comm)
   pbdLapply(X, FUN, ..., pbd.mode = c("mw", "spmd"),
-            rank.source = .SPMD.CT$rank.root, comm = .SPMD.CT$comm)
+            rank.source = .SPMD.CT$rank.root, comm = .SPMD.CT$comm,
+            bcast = FALSE)
   pbdSapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE,
             pbd.mode = c("mw", "spmd"), rank.source = .SPMD.CT$rank.root,
-            comm = .SPMD.CT$comm)
+            comm = .SPMD.CT$comm, bcast = FALSE)
 }
 \arguments{
-  \item{X}{a matrix or array in \code{pbdApply} or a list in \code{pbdLapply} and
-           \code{pbdSapply}.}
-  \item{MARGIN}{\code{MARGIN} as in the \code{apply}.}
-  \item{FUN}{as in the \code{apply}.}
+  \item{X}{a matrix or array in \code{pbdApply()} or a list in
+           \code{pbdLapply()} and \code{pbdSapply()}.}
+  \item{MARGIN}{\code{MARGIN} as in the \code{apply()}.}
+  \item{FUN}{as in the \code{apply()}.}
   \item{...}{optional arguments to \code{FUN}.}
-  \item{simplify}{as in the \code{sapply}.}
-  \item{USE.NAMES}{as in the \code{sapply}.}
+  \item{simplify}{as in the \code{sapply()}.}
+  \item{USE.NAMES}{as in the \code{sapply()}.}
   \item{pbd.mode}{mode of distributed data \code{X}.}
   \item{rank.source}{a rank of source where \code{X} broadcast from.}
   \item{comm}{a communicator number.}
+  \item{bcast}{if bcast to all ranks.}
 }
 \details{
   All functions are majorly called in manager/workers mode
@@ -33,18 +35,18 @@
   serial version.
 
   If \code{pbd.mode = "mw"}, the \code{X} in \code{rank.source} (master)
-  will be redistributed to all processors (workers), then apply \code{FUN}
+  will be redistributed to processors (workers), then apply \code{FUN}
   on the new data, and results are gathered to \code{rank.source}.
   ``In SPMD, master is one of workers.''
-  \code{...} is also \code{scatter} from \code{rank.source}.
+  \code{...} is also \code{scatter()} from \code{rank.source}.
 
   If \code{pbd.mode = "spmd"}, the same copy of \code{X} is supposed to
-  exist in all processors, and original \code{apply} is operated on part of
-  \code{X}. An \code{allgather} or \code{gather} call is required to
+  exist in all processors, and original \code{apply()} is operated on part of
+  \code{X}. An \code{allgather()} or \code{gather()} call is required to
   aggregate results manually.
 
   In SPMD, it is better to split data into pieces, and \code{X} is a local
-  matrix in all processors. Original \code{apply} should be sufficient
+  matrix in all processors. Originally, \code{apply()} should be sufficient
   in this case. 
 }
 \value{
@@ -64,7 +66,7 @@
 # > mpiexec -np 2 Rscript demo.r
 
 ### Initial
-library(pbdMPI, quiet = TRUE)
+library(pbdMPI, quietly = TRUE)
 init()
 .comm.size <- comm.size()
 .comm.rank <- comm.rank()

@@ -1,3 +1,42 @@
+2014-01-25: Ver. 0.2-2
+  * Add comm.read.table(), comm.read.csv(), and comm.read.csv2(), and
+    man pages and a section to vignettes.
+  * Fix get.jid() option.
+  * Fix bugs in comm.write.csv() and comm.write.csv2().
+
+2014-01-20: Ver. 0.2-2
+  * More tests on downstream pbdR package with MS-MPI.
+
+2014-01-12: Ver. 0.2-2
+  * Add Prof. Brian Ripley's trick to MS-MPI's 64bits support.
+  * Move system requirements from MPICH2 to MS-MPI as Windows standard MPI.
+
+2014-01-05: Ver. 0.2-2
+  * Add Intel Miscrosoft HPC Pack 2012 (MS-MPI) support.
+  * Add FreeBSD support suggested by Christian Heckendorf.
+  * Fix seed problems.
+
+2013-12-03: Ver. 0.2-2
+  * Add Intel MPI support.
+
+2013-12-01: Ver. 0.2-2
+  * Add comm.range(), comm.max(), and comm.min().
+  * Add comm.which(), comm.which.max(), and comm.which.min().
+  * Add comm.length(), comm.sum(), comm.mean(), comm.var(), and comm.sd().
+
+2013-11-26: Ver. 0.2-2
+  * Disable seg. fault of overloading .RData and .RHistory.
+
+2013-11-02: Ver. 0.2-2
+  * Fix some bugs and add gathering for task.pull(), pbdLapply(), and
+    pbdSapply().
+  * Add comm.Rprof().
+
+2013-10-02: Ver. 0.2-2
+  * Add comm.write(), comm.write.table(), comm.rite.csv(), and
+    comm.write.csv2().
+  * Add comm.split(), intercomm.merge() and intercomm.create().
+
 2013-09-21: Ver. 0.2-1
   * Fix pbdPROF configure problem.
 

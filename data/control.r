@@ -21,7 +21,8 @@
   mpi.finalize = TRUE,
   quit = TRUE,
   msg.flush = TRUE,
-  msg.barrier = TRUE
+  msg.barrier = TRUE,
+  Rprof.all.rank = FALSE
 ) # End of .SPMD.CT
 
 .SPMD.OP <- c("sum", "prod", "max", "min")
@@ -30,4 +31,3 @@
 #   name = c("int", "double", "char", "raw"),
 #   id = as.integer(1:4)
 # ) # End of .SPMD.DT
-

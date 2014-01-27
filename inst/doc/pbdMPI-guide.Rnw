@@ -2,6 +2,7 @@
 
 \documentclass[article,shortnames,nojss]{pbdMPI-include/jss}
 
+\newcommand{\mpiversion}{0.2-2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% declarations for jss.cls %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11,33 +12,36 @@
 \author{
 \begin{minipage}{6in}
 \centering
-Wei-Chen Chen$^1$, George Ostrouchov$^{1,2}$, Drew Schmidt$^2$, \\
-Pragneshkumar Patel$^2$, Hao Yu$^3$
+Wei-Chen Chen$^1$, George Ostrouchov$^{2,3}$, Drew Schmidt$^3$, \\
+Pragneshkumar Patel$^3$, Hao Yu$^4$
 \end{minipage}
 \\
 \\
-$^1$Computer Science and Mathematics Division, \\
-Oak Ridge National Laboratory, \\
-Oak Ridge, TN, USA \\
-\\
-$^2$Remote Data Analysis and Visualization Center,\\
+$^1$Department of Ecology and Evolutionary Biology, \\
 University of Tennessee, \\
 Knoxville, TN, USA \\
 \\
-$^3$University of Western Ontario, \\
+$^2$Computer Science and Mathematics Division, \\
+Oak Ridge National Laboratory, \\
+Oak Ridge, TN, USA \\
+\\
+$^3$National Institute for Computational Sciences, \\
+University of Tennessee, \\
+Knoxville, TN, USA \\
+\\
+$^4$University of Western Ontario, \\
 London, Ontario, Canada \\
 %\\
 %\\
 %\today
 }
-\title{A Quick Guide for the \pkg{pbdMPI} Package}
-%\\
-%\vspace{0.2cm} \large (Based on Version 0.1-2)}
+\title{A Quick Guide for the \pkg{pbdMPI} Package {\small (Ver. \mpiversion)}}
+
 
 %% for pretty printing and a nice hypersummary also set:
 \Plainauthor{Wei-Chen Chen, George Ostrouchov, Drew Schmidt, Pragneshkumar Patel, Hao Yu} %% comma-separated
-\Plaintitle{Quick Guide for pbdMPI} %% without formatting
-\Shorttitle{Quick Guide for pbdMPI} %% a short title (if necessary)
+\Plaintitle{Quick Guide for pbdMPI (Ver. \mpiversion)} %% without formatting
+\Shorttitle{Quick Guide for pbdMPI (Ver. \mpiversion)} %% a short title (if necessary)
 
 %% an abstract and keywords
 %\Abstract{
@@ -80,7 +84,7 @@ London, Ontario, Canada \\
 \pagenumbering{roman}
 \tableofcontents
 
-\newpage
+%\newpage
 \input{./pbdMPI-include/01-copyright}
 
 %% include your article here, just as usual
@@ -99,6 +103,7 @@ London, Ontario, Canada \\
 \input{./pbdMPI-include/04-windows}
 \input{./pbdMPI-include/05-analog}
 \input{./pbdMPI-include/06-longvector}
+\input{./pbdMPI-include/07-simpleio}
 
 \newpage
 \phantomsection

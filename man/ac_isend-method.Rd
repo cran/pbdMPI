@@ -27,14 +27,14 @@
   \item{request}{a request number.}
 }
 \details{
-  A corresponding \code{recv} or \code{irecv} should be evoked at the
+  A corresponding \code{recv()} or \code{irecv()} should be evoked at the
   corresponding rank \code{rank.dest}.
 }
 \value{
   A \code{NULL} is returned by default.
 }
 \section{Methods}{
-For calling \code{spmd.isend.*}:
+For calling \code{spmd.isend.*()}:
 \describe{
 \item{\code{signature(x = "ANY")}}{}
 \item{\code{signature(x = "integer")}}{}
@@ -50,7 +50,7 @@ For calling \code{spmd.isend.*}:
   Drew Schmidt, Pragneshkumar Patel, and Hao Yu.
 }
 \seealso{
-  \code{\link{send}}, \code{\link{recv}}, \code{\link{irecv}}.
+  \code{\link{send}()}, \code{\link{recv}()}, \code{\link{irecv}()}.
 }
 \examples{
 \dontrun{
@@ -58,7 +58,7 @@ For calling \code{spmd.isend.*}:
 # > mpiexec -np 2 Rscript demo.r
 
 ### Initial
-library(pbdMPI, quiet = TRUE)
+library(pbdMPI, quietly = TRUE)
 init()
 .comm.size <- comm.size()
 .comm.rank <- comm.rank()
