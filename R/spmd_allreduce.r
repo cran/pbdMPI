@@ -5,7 +5,13 @@ spmd.allreduce.default <- function(x, x.buffer = NULL,
     op = .SPMD.CT$op, comm = .SPMD.CT$comm){
   op <- match.arg(tolower(op[1]), .SPMD.OP)
 
-  comm <- as.integer(comm)
+  if(op %in% c("land", "band", "lor", "bor", "lxor", "bxor")){
+    x <- as.integer(x)
+    if(!is.null(x.buffer)){
+      x.buffer <- as.integer(x.buffer)
+    }
+  }
+
   all.array <- spmd.allreduce.integer(
                    as.integer(is.array(x) && length(x) > 0),
                    integer(1), op = "sum",
@@ -23,13 +29,13 @@ spmd.allreduce.default <- function(x, x.buffer = NULL,
 spmd.allreduce.integer <- function(x, x.buffer,
     op = .SPMD.CT$op, comm = .SPMD.CT$comm){
   .Call("spmd_allreduce_integer", x, x.buffer,
-        which(op[1] == .SPMD.OP), comm, PACKAGE = "pbdMPI")
+        which(op[1] == .SPMD.OP), as.integer(comm), PACKAGE = "pbdMPI")
 } # End of spmd.allreduce.integer().
 
 spmd.allreduce.double <- function(x, x.buffer,
     op = .SPMD.CT$op, comm = .SPMD.CT$comm){
   .Call("spmd_allreduce_double", x, x.buffer,
-        which(op[1] == .SPMD.OP), comm, PACKAGE = "pbdMPI")
+        which(op[1] == .SPMD.OP), as.integer(comm), PACKAGE = "pbdMPI")
 } # End of spmd.allreduce.double().
 
 

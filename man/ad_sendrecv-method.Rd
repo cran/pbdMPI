@@ -18,11 +18,11 @@
 }
 \usage{
   sendrecv(x, x.buffer = NULL,
-    rank.dest = as.integer((comm.rank(.SPMD.CT$comm) + 1) \%\%
-                           comm.size(.SPMD.CT$comm)),
+    rank.dest = (comm.rank(.SPMD.CT$comm) + 1) \%\%
+                comm.size(.SPMD.CT$comm),
     send.tag = .SPMD.CT$tag,
-    rank.source = as.integer((comm.rank(.SPMD.CT$comm) - 1) \%\%
-                             comm.size(.SPMD.CT$comm)),
+    rank.source = (comm.rank(.SPMD.CT$comm) - 1) \%\%
+                  comm.size(.SPMD.CT$comm),
     recv.tag = .SPMD.CT$tag,
     comm = .SPMD.CT$comm, status = .SPMD.CT$status)
 }
@@ -68,22 +68,22 @@ For calling \code{spmd.sendrecv.*()}:
 }
 \examples{
 \dontrun{
-# Save code in a file "demo.r" and run with 2 processors by
-# > mpiexec -np 2 Rscript demo.r
+### Save code in a file "demo.r" and run with 2 processors by
+### SHELL> mpiexec -np 2 Rscript demo.r
 
-### Initial
+### Initial.
 library(pbdMPI, quietly = TRUE)
 init()
 .comm.size <- comm.size()
 .comm.rank <- comm.rank()
 
-### Examples
+### Examples.
 N <- 5
 x <- (1:N) + N * .comm.size
 y <- sendrecv(matrix(x, nrow = 1))
 comm.print(y, rank.print = 1)
 
-### Finish
+### Finish.
 finalize()
 }
 }

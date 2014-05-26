@@ -1,17 +1,17 @@
 ### SHELL> mpiexec -np 2 Rscript --vanilla [...].r
 
-### Initial
+### Initial.
 library(pbdMPI, quietly = TRUE)
 init()
 .comm.size <- comm.size()
 .comm.rank <- comm.rank()
 
 if(.comm.size != 2){
-  comm.cat("2 processors are requried.\n", quiet = TRUE)
+  comm.stop("2 processors are requried.\n", quiet = TRUE)
   finalize()
 }
 
-### Examples
+### Examples.
 if(.comm.rank == 0){
   a <- c(T, F, NA)
 } else{
@@ -27,5 +27,5 @@ comm.print(tmp)
 tmp <- comm.all(a, na.rm = TRUE)
 comm.print(tmp)
 
-### Finish
+### Finish.
 finalize()
