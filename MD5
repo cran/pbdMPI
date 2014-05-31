@@ -1,6 +1,6 @@
 e879eaad64aab8e1f8e63e298f5cea28 *COPYING
-68b811a94b55e930999a3f667350eb2e *ChangeLog
-d7847fa27a74f62fc84669d354903f86 *DESCRIPTION
+d7d2b394bb1474221cf650c0a1369faf *ChangeLog
+cc48ca8ea1c17dd960201e99f933c20b *DESCRIPTION
 deec4c4f24444530fbb9aaad64e82ca2 *INSTALL
 ee12ba26389ef7aa43286fcdf3156696 *NAMESPACE
 3df9a2e64d1834fa10e4957affca39b5 *R/api_apply.r
@@ -59,8 +59,8 @@ c0b3aeb1f2809d3f4688ac7f8d5d1753 *R/spmd_tool.r
 91e1db132300c8aadafbe808de0e774b *R/zzz.r.in
 b2e899aa33f3a36d055a3c3e7ad0c01e *README
 460d404fe3ba149ce6d628d35c63b2e8 *cleanup
-b776502d3c2d7b6238e9eac265309a16 *configure
-1ca12a734fb1d279d8aa96b942a0dfc0 *configure.ac
+3fa86de582e832f86df5d107949cf243 *configure
+8422d0ba5f97e0e729d74caf088da69f *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
 9bc5e0c12f3136b2b87d962ab93c5f02 *data/control.r
 dd0dd311e83a1695806878446b75a526 *data/control_io.r
@@ -85,7 +85,7 @@ abb658f69aa14c50574b2181f269b9a5 *demo/sort.r
 72b71515755584700c9ba7b3c083e076 *demo/task_pull.r
 3fa9a26db0dfa569bb7a0f72a668106e *inst/CITATION
 06b6ad51d4a0281c8435a47cb40514f0 *inst/doc/pbdMPI-guide.Rnw
-6681d3d1a0c14712b5e884c81b9d43ba *inst/doc/pbdMPI-guide.pdf
+b4ea98991cf117b47fdb67729bfb3ad9 *inst/doc/pbdMPI-guide.pdf
 3355f989e42944eefd416ac7be20ad4a *inst/examples/README
 d239ed528d44d23e0776f1808efdf343 *inst/examples/test_cs/README
 8e7ea8ac404aac3b78c13ab4c094ce16 *inst/examples/test_cs/named.client.r
@@ -199,7 +199,7 @@ f5da1a9fa685747ee108ba829923f2d7 *man/yy_api_task_pull.Rd
 89e6ceba8386c0ad002f993c5080ee8d *man/zz_internal.Rd
 7441e3cf83ae54e0cfd0d68ccdbbeb25 *man/zz_spmd_internal.Rd
 692f90c5d937cd8a67386694508835d7 *src/Makevars.in
-58a86dc02d79aa6abcadc153a11a9f43 *src/Makevars.win
+2291ea684a515ce447adbf082863821a *src/Makevars.win
 3d79c21d8b3b467eb28daaf614d26f06 *src/comm_api.h
 2a170023f80afaa61155ac5d2b7ab60a *src/comm_errors.c
 9f112e73364ce391e4a703dae8c4dd55 *src/comm_sort_double.c
@@ -210,13 +210,13 @@ f57db0b72747acb829293e1c3ccc4d8b *src/install.libs.R
 d1cc8a4476d82163a88aa7ef42f94da4 *src/pkg_dl.c
 bb9b024d99e7532a9ebd8a5ca654d145 *src/pkg_global.h
 dced20633627858bdf43ead065517c98 *src/pkg_tools.c
-ec95101d65ae84accb6315695b5564a9 *src/spmd.c
+c2879e252e70546b348bd9c481a558ab *src/spmd.c
 f5c68e1f906d0913a0cd18ea6fe5d447 *src/spmd.h
 7eb4a8cada798673f283e08903e6d376 *src/spmd_allgather.c
 1b29a153dc023ed4d80d1db68b084ca6 *src/spmd_allgatherv.c
 ae9db9c575968215bde64534e0a2580d *src/spmd_allreduce.c
 5e5369c4b64d2340e6d8f68de00b07aa *src/spmd_bcast.c
-78341e4ffc473e8a598e8c32d0d88541 *src/spmd_communicator.c
+b65e22a0cf4ee4365327162dc0c3144a *src/spmd_communicator.c
 638bc55dbcf8ecec764195e579f44e71 *src/spmd_communicator_spawn.c
 ed601f1231e16cdc1d7ff49dd9d073c6 *src/spmd_constant.h
 cfa8057bde76e8976eb37dcef21839dc *src/spmd_gather.c
