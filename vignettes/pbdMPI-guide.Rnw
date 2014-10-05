@@ -1,8 +1,8 @@
 %\VignetteIndexEntry{pbdMPI-guide}
 
-\documentclass[article,shortnames,nojss]{pbdMPI-include/jss}
+\documentclass[article,shortnames,nojss]{jss}
 
-\newcommand{\mpiversion}{0.2-3}
+\newcommand{\mpiversion}{0.2-5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% declarations for jss.cls %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,9 +17,9 @@ Pragneshkumar Patel$^3$, Hao Yu$^4$
 \end{minipage}
 \\
 \\
-$^1$Department of Ecology and Evolutionary Biology, \\
-University of Tennessee, \\
-Knoxville, TN, USA \\
+$^1$Center for Biologics Evaluation and Research, \\
+Food and Drug Adminstration, \\
+Silver Spring, MD, USA \\
 \\
 $^2$Computer Science and Mathematics Division, \\
 Oak Ridge National Laboratory, \\
@@ -77,6 +77,7 @@ London, Ontario, Canada \\
 %% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\input{./pbdMPI-include/my_jss.cls}
 \input{./pbdMPI-include/00-preamble}
 
 \begin{document}

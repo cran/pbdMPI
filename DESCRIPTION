@@ -1,6 +1,6 @@
 Package: pbdMPI
-Version: 0.2-4
-Date: 2014-05-27
+Version: 0.2-5
+Date: 2014-10-05
 Title: Programming with Big Data -- Interface to MPI
 Authors@R: c(person("Wei-Chen", "Chen", role = c("aut", "cre"), email =
         "wccsnow@gmail.com"),
@@ -29,7 +29,7 @@ URL: http://r-pbd.org/
 BugReports: http://group.r-pbd.org/
 MailingList: Please send questions and comments regarding pbdR to
         RBigData@gmail.com
-Packaged: 2014-05-31 15:32:32 UTC; snoweye
+Packaged: 2014-10-05 04:31:10 UTC; snoweye
 Author: Wei-Chen Chen [aut, cre],
   George Ostrouchov [aut],
   Drew Schmidt [aut],
@@ -41,4 +41,4 @@ Author: Wei-Chen Chen [aut, cre],
 Maintainer: Wei-Chen Chen <wccsnow@gmail.com>
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2014-05-31 23:12:52
+Date/Publication: 2014-10-05 07:43:18
