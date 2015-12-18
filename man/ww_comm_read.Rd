@@ -7,28 +7,30 @@
   These functions are global reading from specified file.
 }
 \usage{
-  comm.read.table(file, header = FALSE, sep = "", quote = "\"'",
-    dec = ".", col.names,
-    na.strings = "NA", colClasses = NA, nrows = -1, skip = 0,
-    check.names = TRUE, fill = !blank.lines.skip, strip.white = FALSE,
-    blank.lines.skip = TRUE, comment.char = "#", allowEscapes = FALSE,
-    flush = FALSE,
-    fileEncoding = "", encoding = "unknown", text,
-    read.method = .SPMD.IO$read.method[1],
-    balance.method = .SPMD.IO$balance.method[1],
-    comm = .SPMD.CT$comm)
+comm.read.table(file, header = FALSE, sep = "", quote = "\"'",
+                dec = ".",
+                na.strings = "NA", colClasses = NA, nrows = -1, skip = 0,
+                check.names = TRUE, fill = !blank.lines.skip,
+                strip.white = FALSE,
+                blank.lines.skip = TRUE, comment.char = "#",
+                allowEscapes = FALSE,
+                flush = FALSE,
+                fileEncoding = "", encoding = "unknown",
+                read.method = .pbd_env$SPMD.IO$read.method[1],
+                balance.method = .pbd_env$SPMD.IO$balance.method[1],
+                comm = .pbd_env$SPMD.CT$comm)
 
- comm.read.csv(file, header = TRUE, sep = ",", quote = "\"",
-               dec = ".", fill = TRUE, comment.char = "", ...,
-               read.method = .SPMD.IO$read.method[1],
-               balance.method = .SPMD.IO$balance.method[1],
-               comm = .SPMD.CT$comm)
+comm.read.csv(file, header = TRUE, sep = ",", quote = "\"",
+              dec = ".", fill = TRUE, comment.char = "", ...,
+              read.method = .pbd_env$SPMD.IO$read.method[1],
+              balance.method = .pbd_env$SPMD.IO$balance.method[1],
+              comm = .pbd_env$SPMD.CT$comm)
      
- comm.read.csv2(file, header = TRUE, sep = ";", quote = "\"",
-                dec = ",", fill = TRUE, comment.char = "", ...,
-                read.method = .SPMD.IO$read.method[1],
-                balance.method = .SPMD.IO$balance.method[1],
-                comm = .SPMD.CT$comm)
+comm.read.csv2(file, header = TRUE, sep = ";", quote = "\"",
+               dec = ",", fill = TRUE, comment.char = "", ...,
+               read.method = .pbd_env$SPMD.IO$read.method[1],
+               balance.method = .pbd_env$SPMD.IO$balance.method[1],
+               comm = .pbd_env$SPMD.CT$comm)
 }
 \arguments{
   \item{file}{as in \code{read.table()}.}
@@ -36,7 +38,6 @@
   \item{sep}{as in \code{read.table()}.}
   \item{quote}{as in \code{read.table()}.}
   \item{dec}{as in \code{read.table()}.}
-  \item{col.names}{as in \code{read.table()}.}
   \item{na.strings}{as in \code{read.table()}.}
   \item{colClasses}{as in \code{read.table()}.}
   \item{nrows}{as in \code{read.table()}.}
@@ -50,7 +51,6 @@
   \item{flush}{as in \code{read.table()}.}
   \item{fileEncoding}{as in \code{read.table()}.}
   \item{encoding}{as in \code{read.table()}.}
-  \item{text}{as in \code{read.table()}.}
   \item{...}{as in \code{read.csv*()}.}
   \item{read.method}{either "gbd" or "common".}
   \item{balance.method}{balance method for \code{read.method = "gbd"}
@@ -62,7 +62,7 @@
   from rank 0, 1, 2, ...
 
   By default, rank 0 reads the file only, then scatter to other ranks for
-  small datasets (\code{.SPMD.IO$max.read.size}) in
+  small datasets (\code{.pbd_env$SPMD.IO$max.read.size}) in
   \code{read.method = "gbd"}.
   (bcast to others in \code{read.method = "common"}.)
 

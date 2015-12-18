@@ -1,8 +1,8 @@
 ### Spliting COMM_WORLD into comm.within and comm.between.
 
-api.comm.split.by.node <- function(comm = .SPMD.CT$comm,
-    comm.within = .SPMD.CT$comm.within,
-    comm.between = .SPMD.CT$comm.between){
+api.comm.split.by.node <- function(comm = .pbd_env$SPMD.CT$comm,
+    comm.within = .pbd_env$SPMD.CT$comm.within,
+    comm.between = .pbd_env$SPMD.CT$comm.between){
   comm.rank <- spmd.comm.rank(comm)
   comm.size <- spmd.comm.size(comm)
 
@@ -33,17 +33,18 @@ api.comm.split.by.node <- function(comm = .SPMD.CT$comm,
 
 
 ### Two stage allreduce for an integer vector.
-api.allreduce.integer <- function(x, op = .SPMD.CT$op,
-    comm.within = .SPMD.CT$comm.within, comm.between = .SPMD.CT$comm.between){
+api.allreduce.integer <- function(x, op = .pbd_env$SPMD.CT$op,
+    comm.within = .pbd_env$SPMD.CT$comm.within,
+    comm.between = .pbd_env$SPMD.CT$comm.between){
   ### Allreduce within node.
   x <- .Call("spmd_reduce_integer", x, integer(length(x)),
-             which(op[1] == .SPMD.OP), 0L, as.integer(comm.within),
+             which(op[1] == .pbd_env$SPMD.OP), 0L, as.integer(comm.within),
              PACKAGE = "pbdMPI")
 
   ### Allreduce between node.
   if(!spmd.is.comm.null(comm.between)){
     x <- .Call("spmd_allreduce_integer", x, integer(length(x)),
-               which(op[1] == .SPMD.OP), as.integer(comm.between),
+               which(op[1] == .pbd_env$SPMD.OP), as.integer(comm.between),
                PACKAGE = "pbdMPI")
   }
 
@@ -54,8 +55,9 @@ api.allreduce.integer <- function(x, op = .SPMD.CT$op,
 
 
 ### Two stage allgather for an integer vector.
-api.allgather.integer <- function(x, comm = .SPMD.CT$comm,
-    comm.within = .SPMD.CT$comm.within, comm.between = .SPMD.CT$comm.between){
+api.allgather.integer <- function(x, comm = .pbd_env$SPMD.CT$comm,
+    comm.within = .pbd_env$SPMD.CT$comm.within,
+    comm.between = .pbd_env$SPMD.CT$comm.between){
   tl.buffer <- length(x) * spmd.comm.size(comm)
 
   ### Allgather within node.
@@ -80,7 +82,7 @@ api.allgather.integer <- function(x, comm = .SPMD.CT$comm,
              0L, as.integer(comm.within), PACKAGE = "pbdMPI")
 
   ### Reorder since rank order may not be in default.
-  # x.new <- rep(x.org, .pbdMPIEnv$comm.size) 
+  # x.new <- rep(x.org, .pbd_env$comm.size) 
 
   x
 } # End of api.allgather.integer().

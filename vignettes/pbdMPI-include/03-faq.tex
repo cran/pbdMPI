@@ -41,7 +41,13 @@
 \item {\bf\color{blue} Q:}
       Does \pkg{pbdMPI} support any interactive mode? \\
       {\bf\color{blue} A:}
-      No, but yes. \pkg{pbdMPI} only considers batch execution and
+      No, but yes. Since \pkg{pbdMPI} version 0.3-0, there are two additional
+      packages \pkg{pbdZMQ}~\citep{Chen2015pbdZMQpackage} and
+      \pkg{pbdCS}~\citep{Schmidt2015pbdCSpackage}
+      which provide servers-client interaction building upon
+      \pkg{pbdMPI} for parallel computing.
+
+      Originally, \pkg{pbdMPI} only considers batch execution and
       aims for programming with big data that do not fit on desktop
       platforms. We think that interaction with big data on a big
       machine is better handled with a client/server interface, where
@@ -78,6 +84,37 @@
       See \url{http://thirteen-01.stat.iastate.edu/snoweye/pbdr/?item=aws_ec2}
       for setting a cluster on AWS EC2.
 
+\item {\bf\color{blue} Q:}
+      Does \pkg{pbdMPI} support multiple nodes in VirtualBox? \\
+      {\bf\color{blue} A:}
+      See \url{http://thirteen-01.stat.iastate.edu/snoweye/pbdr/?item=multiple_nodes}
+      for setting a cluster with two nodes in VirtualBox. It is extensible to
+      multiple nodes by linked or full cloning with a few network modifications.
+      A pure text file \code{multiple_nodes.txt} contains detail steps for the
+      setting.
+
+\item {\bf\color{blue} Q:}
+      A simple \pkg{pbdMPI} testing code hangs but simple MPI pure C code is
+      working? \\
+      {\bf\color{blue} A:}
+      If your VirtualBox has multiple adapters (for example, \code{eth0} for
+      NAT/host, \code{eth1} using internal \code{192.168.*.*} for MPI
+      communication), then you may consider to bring down \code{eth0} next.
+\begin{Command}
+sudo ip link set eth0 down
+\end{Command}
+      Further, you may also consider
+      to consult network experts for IP and routing table configurations
+      when multiple adapters are required.
+      \proglang{R}/\proglang{Rscript} may not know multiple adapters nor
+      how networking or routing table is setting up. It is just easier for
+      MPI to use a single adapter, open all INPUT/OUTPUT/FORWARD ports,
+      stop all firewall, etc. MPI is designed for high performance computing,
+      so don't put too much extra stuffs to decline the performance.
+      (Thanks for Alba Mart\'{i}nez-Ruiz and Cristina Monta\~{n}ola in
+       Universidad Cat\'{o}lica de la Ssma. Concepci\'{o}n, chil
+       providing errors and issues.)
+
 \end{enumerate}
 
 
@@ -87,6 +124,16 @@
 
 
 \begin{enumerate}
+\item {\bf\color{blue} Q:}
+      What are \pkg{pbdMPI}'s high level back-ends for embarrassingly parallel
+      calculations? \\
+      {\bf\color{blue} A:}
+      See man pages and examples of \code{pbdLapply()}, \code{pbdSapply()},
+      \code{pbdApply()}, and \code{task.pull()} for more details.
+      Some options of those functions, such as \code{pbd.mode}, may be also
+      useful for different data distribution in embarrassingly parallel
+      calculations.
+
 \item {\bf\color{blue} Q:}
       Can I run task jobs by using \pkg{pbdMPI}? \\
       {\bf\color{blue} A:}
@@ -100,7 +147,7 @@
 
 Example 1:
 \begin{Code}[title=SPMD R Script]
-  library(pbdMPI, quietly = TRUE)
+  suppressMessages(library(pbdMPI, quietly = TRUE))
   init()
 
   id <- get.jid(total.tasks)
@@ -125,7 +172,7 @@ unless communicated.
 
 Example 2:
 \begin{Code}[title=SPMD R Script]
-  library(pbdMPI, quietly = TRUE)
+  suppressMessages(library(pbdMPI, quietly = TRUE))
   init()
 
   ### Directly using a loop.
@@ -152,9 +199,9 @@ finalize()
       {\bf\color{blue} A:}
       The answer is no for \pkg{pbdMPI} earlier than version 0.2-2, but
       it is changed since version 0.2-3. A temporary buffer list
-      \code{nb.buffer} is used to store all objects being sent by
+      \code{SPMD.NB.BUFFER} is used to store all objects being sent by
       \code{isend()}. The buffer is created
-      and cumulated in \code{.pbdMPIEnv}, but released as
+      and cumulated in \code{.pbd_env}, but released as
       \code{wait()} is called. Although this may take some performance
       and space, this can avoid \code{gc()} and memory overwrite before
       actual sending is done.
@@ -174,7 +221,7 @@ mpiexec -np 4 Rscript -e "demo(task_pull,'pbdMPI',ask=F,echo=F)"
 \end{Command}
 \begin{Code}[title=SPMD R Script (task\_pull)]
 ### Initial.
-library(pbdMPI, quietly = TRUE)
+suppressMessages(library(pbdMPI, quietly = TRUE))
 
 ### Examples.
 FUN <- function(jid){

@@ -22,9 +22,10 @@
   communicator. The default return is a list of length equal to `comm size'.
 }
 \usage{
-  gather(x, x.buffer = NULL, x.count = NULL, displs = NULL,
-         rank.dest = .SPMD.CT$rank.root, comm = .SPMD.CT$comm,
-         unlist = .SPMD.CT$unlist)
+gather(x, x.buffer = NULL, x.count = NULL, displs = NULL,
+       rank.dest = .pbd_env$SPMD.CT$rank.root,
+       comm = .pbd_env$SPMD.CT$comm,
+       unlist = .pbd_env$SPMD.CT$unlist)
 }
 \arguments{
   \item{x}{an object to be gathered from all ranks.}

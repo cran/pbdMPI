@@ -9,18 +9,22 @@
   lead to potential performance degradation and system termination.
 }
 \usage{
-  comm.stop(..., call. = TRUE, domain = NULL,
-    all.rank = .SPMD.CT$print.all.rank, rank.print = .SPMD.CT$rank.source,
-    comm = .SPMD.CT$comm, mpi.finalize = .SPMD.CT$mpi.finalize,
-    quit = .SPMD.CT$quit)
+comm.stop(..., call. = TRUE, domain = NULL,
+          all.rank = .pbd_env$SPMD.CT$print.all.rank,
+          rank.print = .pbd_env$SPMD.CT$rank.source,
+          comm = .pbd_env$SPMD.CT$comm,
+          mpi.finalize = .pbd_env$SPMD.CT$mpi.finalize,
+          quit = .pbd_env$SPMD.CT$quit)
 
-  comm.warning(..., call. = TRUE, immediate. = FALSE, domain = NULL,
-    all.rank = .SPMD.CT$print.all.rank, rank.print = .SPMD.CT$rank.source,
-    comm = .SPMD.CT$comm)
+comm.warning(..., call. = TRUE, immediate. = FALSE, domain = NULL,
+             all.rank = .pbd_env$SPMD.CT$print.all.rank,
+             rank.print = .pbd_env$SPMD.CT$rank.source,
+             comm = .pbd_env$SPMD.CT$comm)
 
-  comm.warnings(...,
-    all.rank = .SPMD.CT$print.all.rank, rank.print = .SPMD.CT$rank.source,
-    comm = .SPMD.CT$comm)
+comm.warnings(...,
+              all.rank = .pbd_env$SPMD.CT$print.all.rank,
+              rank.print = .pbd_env$SPMD.CT$rank.source,
+              comm = .pbd_env$SPMD.CT$comm)
 }
 \arguments{
   \item{...}{variables to be cat.}

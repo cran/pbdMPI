@@ -17,14 +17,14 @@
   The default return is \code{x}.
 }
 \usage{
-  sendrecv(x, x.buffer = NULL,
-    rank.dest = (comm.rank(.SPMD.CT$comm) + 1) \%\%
-                comm.size(.SPMD.CT$comm),
-    send.tag = .SPMD.CT$tag,
-    rank.source = (comm.rank(.SPMD.CT$comm) - 1) \%\%
-                  comm.size(.SPMD.CT$comm),
-    recv.tag = .SPMD.CT$tag,
-    comm = .SPMD.CT$comm, status = .SPMD.CT$status)
+sendrecv(x, x.buffer = NULL,
+  rank.dest = (comm.rank(.pbd_env$SPMD.CT$comm) + 1) \%\%
+              comm.size(.pbd_env$SPMD.CT$comm),
+  send.tag = .pbd_env$SPMD.CT$tag,
+  rank.source = (comm.rank(.pbd_env$SPMD.CT$comm) - 1) \%\%
+                comm.size(.pbd_env$SPMD.CT$comm),
+  recv.tag = .pbd_env$SPMD.CT$tag,
+  comm = .pbd_env$SPMD.CT$comm, status = .pbd_env$SPMD.CT$status)
 }
 \arguments{
   \item{x}{an object to be sent from a rank.}

@@ -1,6 +1,6 @@
 ### Tool functions.
 
-spmd.hostinfo <- function(comm = .SPMD.CT$comm){
+spmd.hostinfo <- function(comm = .pbd_env$SPMD.CT$comm){
   if(spmd.comm.size(comm) == 0){
     stop(paste("It seems no members running on comm", comm))
   }
@@ -12,11 +12,16 @@ spmd.hostinfo <- function(comm = .SPMD.CT$comm){
   invisible()
 } # End of spmd.hostinfo().
 
-spmd.comm.print <- function(x, all.rank = .SPMD.CT$print.all.rank,
-    rank.print = .SPMD.CT$rank.source, comm = .SPMD.CT$comm,
-    quiet = .SPMD.CT$print.quiet, flush = .SPMD.CT$msg.flush,
-    barrier = .SPMD.CT$msg.barrier, con = stdout(), ...){
+spmd.comm.print <- function(x, all.rank = .pbd_env$SPMD.CT$print.all.rank,
+    rank.print = .pbd_env$SPMD.CT$rank.source, comm = .pbd_env$SPMD.CT$comm,
+    quiet = .pbd_env$SPMD.CT$print.quiet,
+    flush = .pbd_env$SPMD.CT$msg.flush,
+    barrier = .pbd_env$SPMD.CT$msg.barrier, con = stdout(), ...){
   COMM.RANK <- spmd.comm.rank(comm)
+
+  # Don't print "COMM.RANK = " even if verbose=TRUE in the case 'x' is invalid
+  if (!exists(deparse(substitute(x))))
+    quiet <- TRUE
 
   if(barrier){
     spmd.barrier(comm)
@@ -65,11 +70,11 @@ spmd.comm.print <- function(x, all.rank = .SPMD.CT$print.all.rank,
 
 comm.print <- spmd.comm.print
 
-spmd.comm.cat <- function(..., all.rank = .SPMD.CT$print.all.rank,
-    rank.print = .SPMD.CT$rank.source, comm = .SPMD.CT$comm,
-    quiet = .SPMD.CT$print.quiet, sep = " ", fill = FALSE,
-    labels = NULL, append = FALSE, flush = .SPMD.CT$msg.flush,
-    barrier = .SPMD.CT$msg.barrier, con = stdout()){
+spmd.comm.cat <- function(..., all.rank = .pbd_env$SPMD.CT$print.all.rank,
+    rank.print = .pbd_env$SPMD.CT$rank.source, comm = .pbd_env$SPMD.CT$comm,
+    quiet = .pbd_env$SPMD.CT$print.quiet, sep = " ", fill = FALSE,
+    labels = NULL, append = FALSE, flush = .pbd_env$SPMD.CT$msg.flush,
+    barrier = .pbd_env$SPMD.CT$msg.barrier, con = stdout()){
   COMM.RANK <- spmd.comm.rank(comm)
 
   if(barrier){

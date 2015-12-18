@@ -7,6 +7,7 @@
 \alias{comm.free}
 \alias{init}
 \alias{finalize}
+\alias{is.finalized}
 \alias{comm.abort}
 \alias{comm.split}
 \alias{comm.disconnect}
@@ -27,42 +28,48 @@
   The functions provide controls to communicators.
 }
 \usage{
-  barrier(comm = .SPMD.CT$comm)
-  comm.is.null(comm = .SPMD.CT$comm)
-  comm.rank(comm = .SPMD.CT$comm)
-  comm.size(comm = .SPMD.CT$comm)
-  comm.dup(comm, newcomm)
-  comm.free(comm = .SPMD.CT$comm)
-  init(set.seed = TRUE)
-  finalize(mpi.finalize = .SPMD.CT$mpi.finalize)
+barrier(comm = .pbd_env$SPMD.CT$comm)
+comm.is.null(comm = .pbd_env$SPMD.CT$comm)
+comm.rank(comm = .pbd_env$SPMD.CT$comm)
+comm.size(comm = .pbd_env$SPMD.CT$comm)
+comm.dup(comm, newcomm)
+comm.free(comm = .pbd_env$SPMD.CT$comm)
+init(set.seed = TRUE)
+finalize(mpi.finalize = .pbd_env$SPMD.CT$mpi.finalize)
+is.finalized()
 
-  comm.abort(errorcode = 1, comm = .SPMD.CT$comm)
-  comm.split(comm = .SPMD.CT$comm, color = 0L, key = 0L,
-             newcomm = .SPMD.CT$newcomm)
-  comm.disconnect(comm = .SPMD.CT$comm)
-  comm.connect(port.name, info = .SPMD.CT$info,
-               rank.root = .SPMD.CT$rank.root, comm = .SPMD.CT$comm,
-               newcomm = .SPMD.CT$newcomm)
-  comm.accept(port.name, info = .SPMD.CT$info,
-              rank.root = .SPMD.CT$rank.root, comm = .SPMD.CT$comm,
-              newcomm = .SPMD.CT$newcomm)
+comm.abort(errorcode = 1, comm = .pbd_env$SPMD.CT$comm)
+comm.split(comm = .pbd_env$SPMD.CT$comm, color = 0L, key = 0L,
+           newcomm = .pbd_env$SPMD.CT$newcomm)
+comm.disconnect(comm = .pbd_env$SPMD.CT$comm)
+comm.connect(port.name, info = .pbd_env$SPMD.CT$info,
+             rank.root = .pbd_env$SPMD.CT$rank.root,
+             comm = .pbd_env$SPMD.CT$comm,
+             newcomm = .pbd_env$SPMD.CT$newcomm)
+comm.accept(port.name, info = .pbd_env$SPMD.CT$info,
+            rank.root = .pbd_env$SPMD.CT$rank.root,
+            comm = .pbd_env$SPMD.CT$comm,
+            newcomm = .pbd_env$SPMD.CT$newcomm)
 
-  port.open(info = .SPMD.CT$info)
-  port.close(port.name)
-  serv.publish(port.name, serv.name = .SPMD.CT$serv.name,
-               info = .SPMD.CT$info)
-  serv.unpublish(port.name, serv.name = .SPMD.CT$serv.name,
-                 info = .SPMD.CT$info)
-  serv.lookup(serv.name = .SPMD.CT$serv.name, info = .SPMD.CT$info)
+port.open(info = .pbd_env$SPMD.CT$info)
+port.close(port.name)
+serv.publish(port.name, serv.name = .pbd_env$SPMD.CT$serv.name,
+             info = .pbd_env$SPMD.CT$info)
+serv.unpublish(port.name, serv.name = .pbd_env$SPMD.CT$serv.name,
+               info = .pbd_env$SPMD.CT$info)
+serv.lookup(serv.name = .pbd_env$SPMD.CT$serv.name,
+            info = .pbd_env$SPMD.CT$info)
 
-  intercomm.merge(intercomm = .SPMD.CT$intercomm,
-                  high = 0L, comm = .SPMD.CT$comm)
-  intercomm.create(local.comm = .SPMD.CT$comm,
-    local.leader = .SPMD.CT$rank.source, peer.comm = .SPMD.CT$intercomm,
-    remote.leader = .SPMD.CT$rank.dest, tag = .SPMD.CT$tag, 
-    newintercomm = .SPMD.CT$newcomm)
+intercomm.merge(intercomm = .pbd_env$SPMD.CT$intercomm,
+                high = 0L, comm = .pbd_env$SPMD.CT$comm)
+intercomm.create(local.comm = .pbd_env$SPMD.CT$comm,
+                 local.leader = .pbd_env$SPMD.CT$rank.source,
+                 peer.comm = .pbd_env$SPMD.CT$intercomm,
+                 remote.leader = .pbd_env$SPMD.CT$rank.dest,
+                 tag = .pbd_env$SPMD.CT$tag, 
+                 newintercomm = .pbd_env$SPMD.CT$newcomm)
 
-  comm.c2f(comm = .SPMD.CT$comm)
+comm.c2f(comm = .pbd_env$SPMD.CT$comm)
 }
 \arguments{
   \item{comm}{a communicator number.}
@@ -111,6 +118,7 @@
 
   \code{finalize()} frees memory and finishes a MPI world if
   \code{mpi.finalize = TRUE}.
+  \code{is.finalized()} checks if MPI is already finalized.
 
   \code{comm.abort()} aborts MPI.
 

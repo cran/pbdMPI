@@ -8,9 +8,9 @@
   MPI_status.source and MPI_status.tag.
 }
 \usage{
-  anysource()
-  anytag()
-  get.sourcetag(status = .SPMD.CT$status)
+anysource()
+anytag()
+get.sourcetag(status = .pbd_env$SPMD.CT$status)
 }
 \arguments{
   \item{status}{a status number.}

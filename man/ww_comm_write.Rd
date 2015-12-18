@@ -9,15 +9,15 @@
   for all ranks.
 }
 \usage{
-  comm.write(x, file = "data", ncolumns = if(is.character(x)) 1 else 5,
-             append = FALSE, sep = " ", comm = .SPMD.CT$comm)
-  comm.write.table(x, file = "", append = FALSE, quote = TRUE, sep = " ",
-                   eol = "\n", na = "NA", dec = ".", row.names = TRUE,
-                   col.names = TRUE, qmethod = c("escape", "double"),
-                   fileEncoding = "", comm = .SPMD.CT$comm)
+comm.write(x, file = "data", ncolumns = if(is.character(x)) 1 else 5,
+           append = FALSE, sep = " ", comm = .pbd_env$SPMD.CT$comm)
+comm.write.table(x, file = "", append = FALSE, quote = TRUE, sep = " ",
+                 eol = "\n", na = "NA", dec = ".", row.names = TRUE,
+                 col.names = TRUE, qmethod = c("escape", "double"),
+                 fileEncoding = "", comm = .pbd_env$SPMD.CT$comm)
 
-  comm.write.csv(..., comm = .SPMD.CT$comm)
-  comm.write.csv2(..., comm = .SPMD.CT$comm)
+comm.write.csv(..., comm = .pbd_env$SPMD.CT$comm)
+comm.write.csv2(..., comm = .pbd_env$SPMD.CT$comm)
 }
 \arguments{
   \item{x}{as in \code{write()} or \code{write.table()}.}

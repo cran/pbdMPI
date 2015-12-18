@@ -23,8 +23,9 @@
   and the default return is an element of the list.
 }
 \usage{
-  scatter(x, x.buffer = NULL, x.count = NULL, displs = NULL,
-         rank.source = .SPMD.CT$rank.source, comm = .SPMD.CT$comm)
+scatter(x, x.buffer = NULL, x.count = NULL, displs = NULL,
+        rank.source = .pbd_env$SPMD.CT$rank.source,
+        comm = .pbd_env$SPMD.CT$comm)
 }
 \arguments{
   \item{x}{an object of length `comm size' to be scattered to all ranks.}

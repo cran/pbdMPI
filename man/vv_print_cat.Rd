@@ -7,16 +7,20 @@
   by default messages is shown on screen.
 }
 \usage{
-  comm.print(x, all.rank = .SPMD.CT$print.all.rank,
-    rank.print = .SPMD.CT$rank.source, comm = .SPMD.CT$comm,
-    quiet = .SPMD.CT$print.quiet, flush = .SPMD.CT$msg.flush,
-    barrier = .SPMD.CT$msg.barrier, con = stdout(), ...)
+comm.print(x, all.rank = .pbd_env$SPMD.CT$print.all.rank,
+           rank.print = .pbd_env$SPMD.CT$rank.source,
+           comm = .pbd_env$SPMD.CT$comm,
+           quiet = .pbd_env$SPMD.CT$print.quiet,
+           flush = .pbd_env$SPMD.CT$msg.flush,
+           barrier = .pbd_env$SPMD.CT$msg.barrier,
+           con = stdout(), ...)
 
-  comm.cat(..., all.rank = .SPMD.CT$print.all.rank,
-    rank.print = .SPMD.CT$rank.source, comm = .SPMD.CT$comm,
-    quiet = .SPMD.CT$print.quiet, sep = " ", fill = FALSE,
-    labels = NULL, append = FALSE, flush = .SPMD.CT$msg.flush,
-    barrier = .SPMD.CT$msg.barrier, con = stdout())
+comm.cat(..., all.rank = .pbd_env$SPMD.CT$print.all.rank,
+         rank.print = .pbd_env$SPMD.CT$rank.source,
+         comm = .pbd_env$SPMD.CT$comm,
+         quiet = .pbd_env$SPMD.CT$print.quiet, sep = " ", fill = FALSE,
+         labels = NULL, append = FALSE, flush = .pbd_env$SPMD.CT$msg.flush,
+         barrier = .pbd_env$SPMD.CT$msg.barrier, con = stdout())
 }
 \arguments{
   \item{x}{a variable to be printed.}

@@ -2,11 +2,16 @@
 ### Since "libmpi.so" should be load before "pbdMPI.so".
 # useDynLib(pbdMPI)
 
-import(methods, rlecuyer)
+importFrom("stats", "runif", "dist", "as.dist")
+importFrom("utils", "write.table", "read.table", "Rprof")
 
-exportPattern("^spmd\\.[[:alpha:]]+")
+import("methods", "rlecuyer")
+
 # exportPattern("^[\\.]")
+exportPattern("^spmd\\.[[:alpha:]]+")
 exportPattern("^comm\\.[[:alpha:]]+")
+exportPattern("^SPMD\\.[[:alpha:]]+")
+exportPattern("^\\.mpiopt_[[:alpha:]]+")
 
 exportMethods(
   "allgather",
@@ -31,6 +36,7 @@ export(
   "barrier",
   "init",
   "finalize",
+  "is.finalized",
 #  "is.master",
 #  "get.processor.name",
   "port.open",
@@ -71,3 +77,7 @@ export(
   "task.pull.master",
   "task.pull"
 )
+
+S3method(comm.sort, default)
+S3method(comm.sort, integer)
+S3method(comm.sort, double)

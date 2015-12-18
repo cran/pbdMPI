@@ -17,9 +17,9 @@
   the other rank.
 }
 \usage{
-  recv(x.buffer = NULL, rank.source = .SPMD.CT$rank.source,
-       tag = .SPMD.CT$tag, comm = .SPMD.CT$comm,
-       status = .SPMD.CT$status)
+recv(x.buffer = NULL, rank.source = .pbd_env$SPMD.CT$rank.source,
+     tag = .pbd_env$SPMD.CT$tag, comm = .pbd_env$SPMD.CT$comm,
+     status = .pbd_env$SPMD.CT$status)
 }
 \arguments{
   \item{x.buffer}{a buffer to store \code{x} sent from the other rank.}

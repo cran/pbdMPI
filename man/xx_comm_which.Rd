@@ -8,9 +8,10 @@
   distributed data for all ranks.
 }
 \usage{
-  comm.which(x, arr.ind = FALSE, useNames = TRUE, comm = .SPMD.CT$comm)
-  comm.which.max(x, comm = .SPMD.CT$comm)
-  comm.which.min(x, comm = .SPMD.CT$comm)
+comm.which(x, arr.ind = FALSE, useNames = TRUE,
+           comm = .pbd_env$SPMD.CT$comm)
+comm.which.max(x, comm = .pbd_env$SPMD.CT$comm)
+comm.which.min(x, comm = .pbd_env$SPMD.CT$comm)
 }
 \arguments{
   \item{x}{a 'logical' vector or array as in \code{which()},

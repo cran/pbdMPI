@@ -5,8 +5,9 @@
   This function globally sorts distributed data for all ranks.
 }
 \usage{
-  comm.sort(x, decreasing = FALSE, na.last = NA,
-            comm = .SPMD.CT$comm, status = .SPMD.CT$status)
+comm.sort(x, decreasing = FALSE, na.last = NA,
+          comm = .pbd_env$SPMD.CT$comm,
+          status = .pbd_env$SPMD.CT$status)
 }
 \arguments{
   \item{x}{a vector.}

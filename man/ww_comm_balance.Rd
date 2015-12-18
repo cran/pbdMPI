@@ -8,12 +8,12 @@
   \code{matrix}) distributed in row blocks.
 }
 \usage{
-  comm.balance.info(X.gbd, balance.method = .SPMD.IO$balance.method[1],
-                    comm = .SPMD.CT$comm)
-  comm.load.balance(X.gbd, bal.info = NULL,
-                    balance.method = .SPMD.IO$balance.method,
-                    comm = .SPMD.CT$comm)
-  comm.unload.balance(new.X.gbd, bal.info, comm = .SPMD.CT$comm)
+comm.balance.info(X.gbd, balance.method = .pbd_env$SPMD.IO$balance.method[1],
+                  comm = .pbd_env$SPMD.CT$comm)
+comm.load.balance(X.gbd, bal.info = NULL,
+                  balance.method = .pbd_env$SPMD.IO$balance.method[1],
+                  comm = .pbd_env$SPMD.CT$comm)
+comm.unload.balance(new.X.gbd, bal.info, comm = .pbd_env$SPMD.CT$comm)
 }
 \arguments{
   \item{X.gbd}{a gbd \code{data.frame} (or \code{matrix}).}
