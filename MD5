@@ -1,13 +1,14 @@
 e879eaad64aab8e1f8e63e298f5cea28 *COPYING
-5227ec7d14a35202dc73efb238d75cfa *ChangeLog
-1da0189345a97a041eb4a31660992deb *DESCRIPTION
+ce56ce9214d116d0d480e2e4b0ba6130 *ChangeLog
+f7557b372cec205f66713b2b144b6642 *DESCRIPTION
 f513d734a9c592ad055187008706402a *INSTALL
-e284e1f4d6848fa83ae556b05bbb26cc *NAMESPACE
+15ce6bae50c998ec77e2d51f3eae7259 *NAMESPACE
 e65685d28ecc6253c081d6a595d882f0 *R/000_globalVariables.r
 a0beb934e97918c1d260cbb7c2120557 *R/111_control.r
 ea1801c462dcc41bc51a011fddad2474 *R/111_control_io.r
 dac4a7d37cea534a943bb6012e89050e *R/111_control_tp.r
-2b75ac7701208c7fdd96bad4307f7266 *R/222_export_env.r
+53998cf8e69e252b4901938aed96a043 *R/111_pbd_opt.r
+5d914d423f6d8af3c3081d3c021523cc *R/222_export_env.r
 b090aa8f4b3eea50d555eb8742874aac *R/api_apply.r
 d0a4fe45b1f8815b390d5ad2ed60d97e *R/api_apply_RC.r
 b60eef9a183c93d0573255deec035bd0 *R/api_apply_general.r
@@ -93,7 +94,7 @@ b28ea1107978b7955e1250a2b49365c7 *demo/simple_pairs.r
 c2ce2dc4d2f699a4712f20662eb0209d *demo/task_pull.r
 ccaade66dedc90c2ec294f11e6f6e28c *inst/CITATION
 472f18b2ef3d13f1a74c66448bd78f00 *inst/doc/pbdMPI-guide.Rnw
-d1f41a055734d3beaa81625213a31832 *inst/doc/pbdMPI-guide.pdf
+42514e7b08e4fd6c118cf8dd6209ef06 *inst/doc/pbdMPI-guide.pdf
 3355f989e42944eefd416ac7be20ad4a *inst/examples/README
 d239ed528d44d23e0776f1808efdf343 *inst/examples/test_cs/README
 9fd03b4690f575b744e6fe29d7f9dc0e *inst/examples/test_cs/named.client.r
@@ -171,6 +172,7 @@ fbcc7a48bd88f1c0b3874a423c7a2d98 *inst/tests/allreduce.r
 ed193fb84f268b86dd5c67c6b472a5d1 *inst/tests/reduce.r
 4434d91e1a452d8e1465432228844656 *man/00_pbdMPI-package.Rd
 7be309084bc6e8fb98c4375249f906a0 *man/11_d_control.Rd
+1f648948183cbbe07c08a82664202254 *man/11_d_pbd_opt.Rd
 ae225e658756be6bec51c6d3b8b03122 *man/aa_allgather-method.Rd
 c1314d29e7e501006f0da9d19203a6f6 *man/aa_allreduce-method.Rd
 78ad1097f40c94079dcea6e118e1b5f2 *man/aa_bcast-method.Rd
@@ -194,7 +196,7 @@ ef45211e8b7d6df4e8b3c394f154c10b *man/dd_sourcetag.Rd
 4beeaae2f781ab7a7b32a0c59f7370dd *man/vv_get_jid.Rd
 55f1acdcde5a6ea81369a1779a3d652e *man/vv_print_cat.Rd
 51aa77ee0d7ff8d4ff3c7e4064e83d0f *man/vv_seed.Rd
-d7daae422132346daa3e9a6dd1afb24c *man/ww_comm_as_gbd.Rd
+59adcf2cbd6d69a4ef4c0073c2105cfc *man/ww_comm_as_gbd.Rd
 f857ac9d4e1e1fd0b830ba25c936fe75 *man/ww_comm_balance.Rd
 6f2b7d994407cbb7514ba25069f301eb *man/ww_comm_read.Rd
 a11ff7644f4ba6f89f34ef96ceda6e24 *man/ww_comm_write.Rd
@@ -213,7 +215,7 @@ fa108834361eda37187d99511f0c0011 *man/xx_comm_timer.Rd
 074eb7cbca56d2ad1a9a4db133b494a8 *man/yy_api_apply.Rd
 406cd89427b5baf121f07359c0f8bfe2 *man/yy_api_task_pull.Rd
 5e86f8d08ae24f8ecbbfe9c41912e62e *man/zz_comm_internal.Rd
-ea03381d42f52b61511af6c6979f4b8f *man/zz_spmd_control.Rd
+260d3b99e5d40523068006ce141e3d97 *man/zz_spmd_control.Rd
 ed5fbdc97fa82a4c737ad56b0abc496f *man/zz_spmd_internal.Rd
 be6c2f1246824c3f5022f28a215b77b4 *src/Makevars.in
 2291ea684a515ce447adbf082863821a *src/Makevars.win
@@ -256,7 +258,7 @@ e90d9cb589c89e31d1e5e749654c5534 *vignettes/build_pdf.sh
 472f18b2ef3d13f1a74c66448bd78f00 *vignettes/pbdMPI-guide.Rnw
 6e3ca1e66839ff78adb64b3c76cbbfb7 *vignettes/pbdMPI-include/00-preamble.tex
 24122a051fe4625b0858dae335bc0f51 *vignettes/pbdMPI-include/01-acknowledgement.tex
-be247db5d98ee83a011cfd21766c27cc *vignettes/pbdMPI-include/01-copyright.tex
+5613f5398988642e11e23ecbf1ff5aaf *vignettes/pbdMPI-include/01-copyright.tex
 96e2b2f24271e2906898b79363d24331 *vignettes/pbdMPI-include/01-introduction.tex
 69e49db6cad1dd559eea549bdfc8ad22 *vignettes/pbdMPI-include/02-performance.tex
 548fd3e43e41e1ac6d62f293276c15d7 *vignettes/pbdMPI-include/03-faq.tex
