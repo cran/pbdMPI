@@ -81,13 +81,13 @@
 \item {\bf\color{blue} Q:}
       Does \pkg{pbdMPI} support Amazon Web Services (AWS EC2)? \\
       {\bf\color{blue} A:}
-      See \url{http://thirteen-01.stat.iastate.edu/snoweye/pbdr/?item=aws_ec2}
+      See \url{http://snoweye.github.io/pbdr/aws_ec2.html}
       for setting a cluster on AWS EC2.
 
 \item {\bf\color{blue} Q:}
       Does \pkg{pbdMPI} support multiple nodes in VirtualBox? \\
       {\bf\color{blue} A:}
-      See \url{http://thirteen-01.stat.iastate.edu/snoweye/pbdr/?item=multiple_nodes}
+      See \url{http://snoweye.github.io/pbdr/multiple_nodes.html}
       for setting a cluster with two nodes in VirtualBox. It is extensible to
       multiple nodes by linked or full cloning with a few network modifications.
       A pure text file \code{multiple_nodes.txt} contains detail steps for the
@@ -600,6 +600,36 @@ make: *** [comm_sort_double.o] Error 1
       The \code{C:/Program Files/Microsoft MPI/Inc/} may not exist for the
       MS-MPI v7.1 SDKs. The header file may in a different installation
       directory at \code{C:/Program Files (x86)/Microsoft SDKS/MPI/}.
+      See Section~\ref{sec:windows_systems_msmpi} for details.
+
+
+\item {\bf\color{blue} Q:}
+      (Windows) If pbdMPI fails with
+%{\color{red}
+\begin{Error}
+> library(pbdMPI)
+Loading required package: rlecuyer
+Error : .onLoad failed in loadNamespace() for 'pbdMPI', details:
+  call: inDL(x, as.logical(local), as.logical(now), ...)
+  error: unable to load shared object
+         'C:/Users/.../pbdMPI/libs/x64/pbdMPI.dll':
+  LoadLibrary failure:  The specified module could not be found.
+\end{Error}
+%}
+or with a system error like
+%{\color{red}
+\begin{Error}
+The program can't start because msmpi.dll is missing from your
+computer. Try reinstalling the program to fix this problem.
+\end{Error}
+%}
+      {\bf\color{blue} A:}
+      Make sure MS-MPI is installed correctly and the
+      \code{msmpi.dll} is accessible from \code{PATH}
+      before RGui is launched.
+      Double check with \code{Sys.getenv("PATH")} and make sure
+      something like \code{C:/Program Files/Microsoft MPI/Bin/} is
+      included in it.
       See Section~\ref{sec:windows_systems_msmpi} for details.
 \end{enumerate}
 
