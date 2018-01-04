@@ -16,6 +16,8 @@
 \alias{spmd.allreduce.integer}
 \alias{spmd.allreduce.double}
 \alias{spmd.allreduce.logical}
+\alias{spmd.allreduce.float}
+\alias{spmd.allreduce.float32}
 \alias{spmd.bcast.object}
 \alias{spmd.bcast.array}
 \alias{spmd.bcast.default}
@@ -28,6 +30,7 @@
 \alias{spmd.comm.set.errhandler}
 \alias{spmd.comm.is.null}
 \alias{spmd.comm.rank}
+\alias{spmd.comm.localrank}
 \alias{spmd.comm.size}
 \alias{spmd.comm.dup}
 \alias{spmd.comm.free}
@@ -84,6 +87,8 @@
 \alias{spmd.reduce.double}
 \alias{spmd.scatter.object}
 \alias{spmd.reduce.logical}
+\alias{spmd.reduce.float}
+\alias{spmd.reduce.float32}
 \alias{spmd.scatter.array}
 \alias{spmd.scatter.default}
 \alias{spmd.scatterv.default}
