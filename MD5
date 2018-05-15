@@ -1,6 +1,6 @@
 e879eaad64aab8e1f8e63e298f5cea28 *COPYING
-99fbe06725fbe843a6f79beb6c98367d *ChangeLog
-12f2348d17f143e07ace486c82cc16f9 *DESCRIPTION
+bb91fc82d7600969f1b468e9e21178dd *ChangeLog
+e847a8c85efc0ab1f1ab93af90bc1d32 *DESCRIPTION
 90feec81598078c97aa21236ead06236 *INSTALL
 cdeb6b2ab4e49f3bf6aac171804a4362 *NAMESPACE
 e65685d28ecc6253c081d6a595d882f0 *R/000_globalVariables.r
@@ -97,7 +97,7 @@ b28ea1107978b7955e1250a2b49365c7 *demo/simple_pairs.r
 c2ce2dc4d2f699a4712f20662eb0209d *demo/task_pull.r
 45829eb15f07129c82dac57ce02e8c92 *inst/CITATION
 43f73e3051c96f71ded1aff8fe607580 *inst/doc/pbdMPI-guide.Rnw
-ed4f05cef04096d4f3b040475b21d0b1 *inst/doc/pbdMPI-guide.pdf
+4dbe4ca68643ca81d1883a92fdb1bdd7 *inst/doc/pbdMPI-guide.pdf
 3355f989e42944eefd416ac7be20ad4a *inst/examples/README
 d239ed528d44d23e0776f1808efdf343 *inst/examples/test_cs/README
 9fd03b4690f575b744e6fe29d7f9dc0e *inst/examples/test_cs/named.client.r
@@ -265,7 +265,7 @@ e90d9cb589c89e31d1e5e749654c5534 *vignettes/build_pdf.sh
 5613f5398988642e11e23ecbf1ff5aaf *vignettes/pbdMPI-include/01-copyright.tex
 0d80d6a25b1ac494f4cf7c86a141475a *vignettes/pbdMPI-include/01-introduction.tex
 69e49db6cad1dd559eea549bdfc8ad22 *vignettes/pbdMPI-include/02-performance.tex
-de7c80678b7eb51ce9563ed273ec5e57 *vignettes/pbdMPI-include/03-faq.tex
+403091006fe64179a43881adb5b987d9 *vignettes/pbdMPI-include/03-faq.tex
 4c5f20b1d48e4c8b529c03a4e23b3ebc *vignettes/pbdMPI-include/04-windows_msmpi.tex
 7e2278c375f45e414dc487452eab6f59 *vignettes/pbdMPI-include/05-analog.tex
 bb160f0a55b37897f6c67589c7251fd1 *vignettes/pbdMPI-include/06-longvector.tex
