@@ -1,6 +1,6 @@
 e879eaad64aab8e1f8e63e298f5cea28 *COPYING
-bb91fc82d7600969f1b468e9e21178dd *ChangeLog
-e847a8c85efc0ab1f1ab93af90bc1d32 *DESCRIPTION
+6f399be51ed8053cbb22022aa777e5aa *ChangeLog
+07aad383155764b6c218d95a175d1af4 *DESCRIPTION
 90feec81598078c97aa21236ead06236 *INSTALL
 cdeb6b2ab4e49f3bf6aac171804a4362 *NAMESPACE
 e65685d28ecc6253c081d6a595d882f0 *R/000_globalVariables.r
@@ -48,7 +48,7 @@ bb1719dc9f3ac770bb6580cb3818c403 *R/spmd_allreduce_obj.r
 393beed9c47ef39eeee5f655b46f1ad7 *R/spmd_alltoall.r
 4136d224dde09f573a8f8b4e3340b6c9 *R/spmd_bcast.r
 2aeb452e97feef597eb6824a73c2a29b *R/spmd_bcast_obj.r
-268a6f86fc09e90bb17efb5c9c6533b0 *R/spmd_communicator.r
+5f3211080bb062a6ac26694c8afcc80e *R/spmd_communicator.r
 7bc6d5382970699ca9d69c8f3c93a01e *R/spmd_communicator_spawn.r
 2e131579597610ef820129a344082527 *R/spmd_gatherv.r
 08db71a26528e0b485de0306f3ac4844 *R/spmd_gatherv_obj.r
@@ -71,8 +71,8 @@ ec8ba2f9249bc39ffa27c2853195eb86 *R/spmd_wait.r
 9cae7c635b499a002b641c713f56fa17 *R/zzz.r.in
 a09d76a1793761497170bf96e1c1af87 *README.md
 cddad26ab46d27a31cdede710168732f *cleanup
-4bb0ee0212af0315ff3b241f13d2746c *configure
-a80ff1fd4e4c6832f1030ce37cfa41d8 *configure.ac
+1130c5392bdec3838d27ec03d2dd4129 *configure
+50048029ea18766e02ed99b41797ef37 *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
 d87a53ca94c82139bcb7c79028ea372e *demo/00Index
 53b4ebc2a2a7492feeb16fd71ec9a7b3 *demo/allgather.r
@@ -218,7 +218,7 @@ fa108834361eda37187d99511f0c0011 *man/xx_comm_timer.Rd
 cc2227ca5beae3823ff9cf00057ed811 *man/xx_comm_which.Rd
 166cb86086521eddbe92adddf07259a1 *man/yy_api_apply.Rd
 47f894b745b7c6e68278a5c7e400c63b *man/yy_api_task_pull.Rd
-5e86f8d08ae24f8ecbbfe9c41912e62e *man/zz_comm_internal.Rd
+8aea1966c94ccf235ad79379c666713c *man/zz_comm_internal.Rd
 260d3b99e5d40523068006ce141e3d97 *man/zz_spmd_control.Rd
 c438a9bb4ba1e8dfe3965a4230f82c00 *man/zz_spmd_internal.Rd
 be6c2f1246824c3f5022f28a215b77b4 *src/Makevars.in
@@ -257,7 +257,7 @@ b4d3f2f491a7c0abcee790bf8d246b22 *src/spmd_send.c
 c148a83c1a3dca54ab424e7df117f6fd *src/spmd_tool.c
 a893c1b14f5a9b76f49995024af38af7 *src/spmd_utility.c
 f7e7f3f1b63132b96af81732aa6c4900 *src/spmd_wait.c
-19c12d30ee89523732f76264cc732a40 *src/zzz.c
+756635d5029cbd6c3a3dede9c7a79adf *src/zzz.c
 e90d9cb589c89e31d1e5e749654c5534 *vignettes/build_pdf.sh
 43f73e3051c96f71ded1aff8fe607580 *vignettes/pbdMPI-guide.Rnw
 6e3ca1e66839ff78adb64b3c76cbbfb7 *vignettes/pbdMPI-include/00-preamble.tex
