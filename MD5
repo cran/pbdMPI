@@ -1,8 +1,8 @@
 e879eaad64aab8e1f8e63e298f5cea28 *COPYING
-6f399be51ed8053cbb22022aa777e5aa *ChangeLog
-07aad383155764b6c218d95a175d1af4 *DESCRIPTION
+f7f0d64b11e1f78226ebce28b82f1146 *ChangeLog
+2e12dc324f9b9a25813ee2fe6add1993 *DESCRIPTION
 90feec81598078c97aa21236ead06236 *INSTALL
-cdeb6b2ab4e49f3bf6aac171804a4362 *NAMESPACE
+725246a569afc61a4122d40be91c6a59 *NAMESPACE
 e65685d28ecc6253c081d6a595d882f0 *R/000_globalVariables.r
 a0beb934e97918c1d260cbb7c2120557 *R/111_control.r
 ea1801c462dcc41bc51a011fddad2474 *R/111_control_io.r
@@ -36,7 +36,7 @@ feb48b187687e36e221c9ee8d0ffe366 *R/comm_stopifnot.r
 c0ec8b9059871477e482e25dbadd1f90 *R/comm_which.r
 93e8235a0e51cba5df69eb97d526dac4 *R/comm_write.r
 6f2eaa5651d48848562e2ddc6698fe8e *R/float32.r
-1f4c2a85b3437d49405021f084a9357e *R/get_conf.r
+d5749ae3be65e51b6b72383dc97b29ea *R/get_conf.r
 b837b1bc4720be32891ec8abc107bddd *R/get_lib.r
 efefe2cb18bbcca1e77f93a9f4dcde01 *R/get_winmpi.r
 f3ccfb0f2067271d2fd08f6e0bfb4fd4 *R/mpi_apts.r
@@ -66,13 +66,13 @@ dadd3eedaf83b4c96315f1f4aadfb596 *R/spmd_sendrecv_replace.r
 f12209a4ed165fd2c7f23d72808b5ac8 *R/spmd_tool.r
 f687bf682efd8801c5e82881a8e84a4f *R/spmd_utility.r
 ec8ba2f9249bc39ffa27c2853195eb86 *R/spmd_wait.r
-853e380ed3bcacd85d994d25b94879b6 *R/util_execmpi.r
+77ea4ea771d1914381fb9ac04478e263 *R/util_execmpi.r
 15355650401decc2d1cdadb5aef6e329 *R/windows/zzz.r
 9cae7c635b499a002b641c713f56fa17 *R/zzz.r.in
 a09d76a1793761497170bf96e1c1af87 *README.md
 cddad26ab46d27a31cdede710168732f *cleanup
-1130c5392bdec3838d27ec03d2dd4129 *configure
-50048029ea18766e02ed99b41797ef37 *configure.ac
+e2661ecb85a0db659d4e87c94cfc292d *configure
+f330e07478fa61b10696f83a3b3089fc *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
 d87a53ca94c82139bcb7c79028ea372e *demo/00Index
 53b4ebc2a2a7492feeb16fd71ec9a7b3 *demo/allgather.r
@@ -196,7 +196,7 @@ f4db0253fa9903bc3177bfbfd1f9f3bb *man/cc_arrange.mpi.apts.Rd
 2da0527e5b1f26621ef2c050b1b9b1e5 *man/dd_prob.Rd
 3924ca17fa4dbaccd1a50a9c78a138f5 *man/dd_sourcetag.Rd
 a9db3df75866b88a1062e46e351456b5 *man/dd_wait.Rd
-b7fecbfbfce37f346a7090f6cd89ba24 *man/uu_execmpi.Rd
+1f874db607c7a04a6f8e4949ca8b540f *man/uu_execmpi.Rd
 23ffce0179838391a7cd04dcd5264705 *man/vv_get_jid.Rd
 a94c98b365829192c05f4304a13ec4ff *man/vv_print_cat.Rd
 e9c8290e4b2473c5fcb0a0f3f8bce59f *man/vv_seed.Rd
@@ -221,7 +221,7 @@ cc2227ca5beae3823ff9cf00057ed811 *man/xx_comm_which.Rd
 8aea1966c94ccf235ad79379c666713c *man/zz_comm_internal.Rd
 260d3b99e5d40523068006ce141e3d97 *man/zz_spmd_control.Rd
 c438a9bb4ba1e8dfe3965a4230f82c00 *man/zz_spmd_internal.Rd
-be6c2f1246824c3f5022f28a215b77b4 *src/Makevars.in
+c4fa789024138dcd3bad3e9796e1b6d1 *src/Makevars.in
 835f46b89c7e60f985ee505abfcad387 *src/Makevars.win
 3d79c21d8b3b467eb28daaf614d26f06 *src/comm_api.h
 2a170023f80afaa61155ac5d2b7ab60a *src/comm_errors.c
