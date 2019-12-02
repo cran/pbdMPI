@@ -1,6 +1,6 @@
 e879eaad64aab8e1f8e63e298f5cea28 *COPYING
-79f3caf39e91d806087d48648ea7ae03 *ChangeLog
-1dab2b8af3a7c01586053ed8dc007fd5 *DESCRIPTION
+85a35c73e35eb2fc51996a0f82a9b137 *ChangeLog
+c889061c8e07901f2fa6e4e0851c8539 *DESCRIPTION
 90feec81598078c97aa21236ead06236 *INSTALL
 6a8406750d5e9520db077d2f5fa45621 *NAMESPACE
 e65685d28ecc6253c081d6a595d882f0 *R/000_globalVariables.r
@@ -250,7 +250,7 @@ ef6ac740ed4dfe25027205a389b5de2a *man/yy_get_conf_lib_winmpi.Rd
 be22715887b1e3c654afeea7eac754d3 *man/zz_spmd_control.Rd
 bdc0e440f4fd896a7159e9e61c75b6aa *man/zz_spmd_internal.Rd
 c4fa789024138dcd3bad3e9796e1b6d1 *src/Makevars.in
-835f46b89c7e60f985ee505abfcad387 *src/Makevars.win
+addc8a9d51000df5926cc10b60580dce *src/Makevars.win
 3d79c21d8b3b467eb28daaf614d26f06 *src/comm_api.h
 2a170023f80afaa61155ac5d2b7ab60a *src/comm_errors.c
 9f112e73364ce391e4a703dae8c4dd55 *src/comm_sort_double.c
