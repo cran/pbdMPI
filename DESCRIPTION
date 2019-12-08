@@ -1,6 +1,6 @@
 Package: pbdMPI
-Version: 0.4-1
-Date: 2019-11-21
+Version: 0.4-2
+Date: 2019-12-01
 Title: Programming with Big Data -- Interface to MPI
 Authors@R: c(person("Wei-Chen", "Chen", role = c("aut", "cre"), email =
         "wccsnow@gmail.com"),
@@ -35,7 +35,7 @@ MailingList: Please send questions and comments regarding pbdR to
         RBigData@gmail.com
 NeedsCompilation: yes
 Maintainer: Wei-Chen Chen <wccsnow@gmail.com>
-Packaged: 2019-11-27 23:42:03 UTC; snoweye
+Packaged: 2019-12-01 21:36:43 UTC; snoweye
 Author: Wei-Chen Chen [aut, cre],
   George Ostrouchov [aut],
   Drew Schmidt [aut],
@@ -47,4 +47,4 @@ Author: Wei-Chen Chen [aut, cre],
   Sebastien Lamy de la Chapelle [aut] (fix check type for send/recv long
     vectors)
 Repository: CRAN
-Date/Publication: 2019-12-02 18:40:02 UTC
+Date/Publication: 2019-12-08 10:30:12 UTC
