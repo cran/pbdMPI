@@ -17,15 +17,15 @@
 #include "pkg_constant.h"
 
 /* Declared in "Rmpi.c", "spmd.c", or similar main c functions. */
-extern MPI_Comm *comm;
-extern MPI_Comm localcomm;
-extern MPI_Status *status;
-extern MPI_Datatype *datatype;
-extern MPI_Info *info;
-extern MPI_Request *request;
-extern int COMM_MAXSIZE;
-extern int STATUS_MAXSIZE;
-extern int REQUEST_MAXSIZE;
+extern MPI_Comm *global_spmd_comm;
+extern MPI_Comm global_spmd_localcomm;
+extern MPI_Status *global_spmd_status;
+extern MPI_Datatype *global_spmd_datatype;
+extern MPI_Info *global_spmd_info;
+extern MPI_Request *global_spmd_request;
+extern int global_spmd_COMM_MAXSIZE;
+extern int global_spmd_STATUS_MAXSIZE;
+extern int global_spmd_REQUEST_MAXSIZE;
 
 /* Collections. */
 typedef struct _rmpi_array_pointers	rmpi_array_pointers;
@@ -42,17 +42,17 @@ struct _rmpi_array_pointers{
 extern rmpi_array_pointers MPI_APTS, *MPI_APTS_ptr;
 
 /* In "pkg_tools.c". */
-SEXP arrange_MPI_APTS();
-void set_MPI_APTS_in_R();
-void get_MPI_APTS_from_R();
-SEXP get_MPI_COMM_PTR();
-SEXP addr_MPI_COMM_PTR();
+SEXP arrange_MPI_APTS(void);
+void set_MPI_APTS_in_R(void);
+void get_MPI_APTS_from_R(void);
+SEXP get_MPI_COMM_PTR(SEXP, SEXP);
+SEXP addr_MPI_COMM_PTR(SEXP);
 
 /* In "pkg_dl.c". */
 extern void *DL_APT_ptr;
 SEXP pkg_initialize(SEXP R_i_lib);
-SEXP pkg_dlopen();
-SEXP pkg_dlclose();
+SEXP pkg_dlopen(void);
+SEXP pkg_dlclose(void);
 
 /* Obtain character pointers. */
 #define CHARPT(x,i)	((char*)CHAR(STRING_ELT(x,i)))
