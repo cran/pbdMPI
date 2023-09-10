@@ -22,8 +22,6 @@
 \alias{intercomm.merge}
 \alias{intercomm.create}
 \alias{comm.c2f}
-\alias{COMM.SIZE}
-\alias{COMM.RANK}
 \title{ Communicator Functions }
 \description{
   The functions provide controls to communicators.
@@ -166,9 +164,8 @@ comm.c2f(comm = .pbd_env$SPMD.CT$comm)
 ### SHELL> mpiexec -np 2 Rscript demo.r
 
 spmd.code <- "
-### Initial.
+### Initialize
 suppressMessages(library(pbdMPI, quietly = TRUE))
-init()
 .comm.size <- comm.size()
 .comm.rank <- comm.rank()
 

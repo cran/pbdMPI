@@ -11,7 +11,7 @@
 
 ### The above are fake. These only be here for reference and to fool
 ### ``R CMD check''.
-### The real one ``in practicee and runtime'' is initialed by the
+### The real one ``in practice and runtime'' is initialed by the
 ### .mpiopt_init() in next which is always called by .OnLoad() in "zzz.r"
 ### to avoid overloaded and can be really accessed by users instead of sealed
 ### by R after loaded.
@@ -38,8 +38,8 @@
 #   invisible()
 # } # End of .mpiopt_set().
 
-### Initial MPI options.
-.mpiopt_init <- function(envir = .GlobalEnv){
+### Initialize MPI options.
+.mpiopt_init <- function(envir = .GlobalEnv, mpi.type = "OPENMPI"){
   if(!exists(".pbd_env", envir = envir)){
     envir$.pbd_env <- new.env()
   } 
@@ -49,6 +49,7 @@
   envir$.pbd_env$SPMD.TP <- SPMD.TP()
   envir$.pbd_env$SPMD.DT <- SPMD.DT()
   envir$.pbd_env$SPMD.NB.BUFFER <- list()
+  envir$.pbd_env$MPI.TYPE <- mpi.type
 
   invisible()
 } # End of .mpiopt_init().

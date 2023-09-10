@@ -7,6 +7,11 @@
 # } # End of .Last.lib().
 
 .onLoad <- function(libname, pkgname){
+  ### OpenMPI uses env variable TMPDIR instead of R tempdir(). Making them 
+  ### the same allows R to do a full cleanup of temp files.
+  ### This may not be needed for MSMPI or MPICH, but just in case.
+  Sys.setenv("TMPDIR" = tempdir())
+
   library.dynam("pbdMPI", pkgname, libname)
 
   # if(! is.loaded("spmd_initialize", PACKAGE = "pbdMPI")){
@@ -26,25 +31,25 @@
   ### For seed.
   # if(! exists(".lec.Random.seed.table", envir = .GlobalEnv) &&
   #    ! exists(".Random.seed", envir = .GlobalEnv)){
-  if(! exists(".Random.seed", envir = .GlobalEnv)){
-    # seed <- as.integer(Sys.getpid() + Sys.time())
-    seed <- as.integer(runif(6, 1L, 2147483647L))
-    seed <- .Call("spmd_bcast_integer", seed, 0L, 0L, PACKAGE = "pbdMPI")
-    # seed <- rep(seed, 6)
-
-    comm.size <- .Call("spmd_comm_size", 0L, PACKAGE = "pbdMPI")
-    comm.rank <- .Call("spmd_comm_rank", 0L, PACKAGE = "pbdMPI")
-    names <- as.character(0:(comm.size - 1))
-    name <- as.character(comm.rank)
-
-    invisible(eval(.lec.old.kind <- RNGkind(), envir = .GlobalEnv))
-    invisible(eval(.lec.SetPackageSeed(seed), envir = .GlobalEnv))
-    invisible(eval(.lec.CreateStream(names), envir = .GlobalEnv))
-    invisible(eval(.lec.CurrentStream(name), envir = .GlobalEnv))
-  }
+  #GO if(! exists(".Random.seed", envir = .GlobalEnv)){
+  #GO   # seed <- as.integer(Sys.getpid() + Sys.time())
+  #GO   seed <- as.integer(runif(6, 1L, 2147483647L))
+  #GO   seed <- .Call("spmd_bcast_integer", seed, 0L, 0L, PACKAGE = "pbdMPI")
+  #GO   # seed <- rep(seed, 6)
+  #GO 
+  #GO   comm.size <- .Call("spmd_comm_size", 0L, PACKAGE = "pbdMPI")
+  #GO   comm.rank <- .Call("spmd_comm_rank", 0L, PACKAGE = "pbdMPI")
+  #GO   names <- as.character(0:(comm.size - 1))
+  #GO   name <- as.character(comm.rank)
+  #GO 
+  #GO   invisible(eval(.lec.old.kind <- RNGkind(), envir = .GlobalEnv))
+  #GO   invisible(eval(.lec.SetPackageSeed(seed), envir = .GlobalEnv))
+  #GO   invisible(eval(.lec.CreateStream(names), envir = .GlobalEnv))
+  #GO   invisible(eval(.lec.CurrentStream(name), envir = .GlobalEnv))
+  #GO }
 
   ### Preload to global environment.
-  invisible(eval(parse(text = "pbdMPI:::.mpiopt_init()")))
+  invisible(eval(parse(text = "pbdMPI:::.mpiopt_init(mpi.type = 'MPICH')")))
 
   invisible()
 } # End of .onLoad().

@@ -75,22 +75,22 @@ spmd.init <- function(set.seed = TRUE){
   # assign(".comm.rank", spmd.comm.rank(), envir = .GlobalEnv)
 
   ### For seed.
-  if(set.seed){
-   # seed <- as.integer(Sys.getpid() + Sys.time())
-    seed <- as.integer(runif(6, 1L, 2147483647L))
-    seed <- .Call("spmd_bcast_integer", seed, 0L, 0L, PACKAGE = "pbdMPI")
-    # seed <- rep(seed, 6)
-
-    comm.size <- .Call("spmd_comm_size", 0L, PACKAGE = "pbdMPI")
-    comm.rank <- .Call("spmd_comm_rank", 0L, PACKAGE = "pbdMPI")
-    names <- as.character(0:(comm.size - 1))
-    name <- as.character(comm.rank)
-
-    suppressWarnings(eval(.lec.old.kind <- RNGkind(), envir = .GlobalEnv))
-    suppressWarnings(eval(.lec.SetPackageSeed(seed), envir = .GlobalEnv))
-    suppressWarnings(eval(.lec.CreateStream(names), envir = .GlobalEnv))
-    suppressWarnings(eval(.lec.CurrentStream(name), envir = .GlobalEnv))
-  }
+  #GO if(set.seed){
+  #GO  # seed <- as.integer(Sys.getpid() + Sys.time())
+  #GO   seed <- as.integer(runif(6, 1L, 2147483647L))
+  #GO   seed <- .Call("spmd_bcast_integer", seed, 0L, 0L, PACKAGE = "pbdMPI")
+  #GO   # seed <- rep(seed, 6)
+  #GO 
+  #GO   comm.size <- .Call("spmd_comm_size", 0L, PACKAGE = "pbdMPI")
+  #GO   comm.rank <- .Call("spmd_comm_rank", 0L, PACKAGE = "pbdMPI")
+  #GO   names <- as.character(0:(comm.size - 1))
+  #GO   name <- as.character(comm.rank)
+  #GO 
+  #GO   suppressWarnings(eval(.lec.old.kind <- RNGkind(), envir = .GlobalEnv))
+  #GO   suppressWarnings(eval(.lec.SetPackageSeed(seed), envir = .GlobalEnv))
+  #GO   suppressWarnings(eval(.lec.CreateStream(names), envir = .GlobalEnv))
+  #GO   suppressWarnings(eval(.lec.CurrentStream(name), envir = .GlobalEnv))
+  #GO }
 
   invisible(ret)
 } # End of spmd.init().
@@ -116,10 +116,10 @@ spmd.is.finalized <- function(){
 
 is.finalized <- spmd.is.finalized
 
-spmd.is.master <- function(){
+spmd.is.manager <- function(){
   tmp <- is.loaded("spmd_comm_get_parent", PACKAGE = "pbdMPI")
   if(tmp){
-    as.logical(.Call("spmd_is_master", PACKAGE = "pbdMPI"))
+    as.logical(.Call("spmd_is_manager", PACKAGE = "pbdMPI"))
   } else{
     if(spmd.comm.size(1L) > 0){
       spmd.comm.rank(1L) == 0
@@ -127,9 +127,9 @@ spmd.is.master <- function(){
       spmd.comm.rank(0L) == 0
     }
   }
-} # End of spmd.is.master().
+} # End of spmd.is.manager().
 
-is.master <- spmd.is.master
+is.manager <- spmd.is.manager
 
 spmd.get.processor.name <- function(short = TRUE){
   name <- .Call("spmd_get_processor_name", PACKAGE = "pbdMPI")
