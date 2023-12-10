@@ -1,6 +1,6 @@
 e879eaad64aab8e1f8e63e298f5cea28 *COPYING
-11385afa6726f6f3fb05bc4f5adbd0bd *ChangeLog
-004c2cf91370d0e44cec3a6e2af6bb02 *DESCRIPTION
+5f891c457bfa28821a099f6da91564a7 *ChangeLog
+ebd7f13d4c9405da544ab0d55789f46a *DESCRIPTION
 5ceb32a202ce7770d8e7c2d80427cc0c *INSTALL
 e8656e9d505c26d776c9e9df2f186f41 *NAMESPACE
 e65685d28ecc6253c081d6a595d882f0 *R/000_globalVariables.r
@@ -105,7 +105,7 @@ fb9f982251647bc92abcb59c844bd7a6 *inst/c_combine_r/a
 027a7fe148943bb93e829f9c8fddfe9e *inst/c_combine_r/a.c
 46ecd05f345b93dbe4109e60abb8e86e *inst/c_combine_r/a.r
 43f73e3051c96f71ded1aff8fe607580 *inst/doc/pbdMPI-guide.Rnw
-8bf0b0f3783fd799610b6347d2f630c6 *inst/doc/pbdMPI-guide.pdf
+f05992de83344d15eb6911f79bb5d207 *inst/doc/pbdMPI-guide.pdf
 cc567942e288a4441011e7278fad11c6 *inst/examples/README
 bfe71da03640883cef1762bc3f0343c1 *inst/examples/test_cs/README
 8b042418ab3ad711d9e695b0df94fee0 *inst/examples/test_cs/named.client.r
@@ -249,7 +249,7 @@ c399f87768f38ce53c20368e1777db14 *man/xx_comm_timer.Rd
 154276c4e7e8af67edd2e6b1cfff3064 *man/xx_comm_which.Rd
 cc30155d65b6e03158ac062a6e973c36 *man/yy_api_apply.Rd
 e9b0db047525e680aca7fe4fc59c8e5a *man/yy_api_task_pull.Rd
-eba7a6894b895c6e219fd24b36302ae2 *man/yy_get_conf_lib_winmpi.Rd
+33ce7b249f4a3a00050e14fc6c574d1d *man/yy_get_conf_lib_winmpi.Rd
 7497b42e232459c52d9085d7641d4de5 *man/yy_pkg_tools.Rd
 a887c74e48a5135bf9fc2fd833e8aa6f *man/zz_comm_internal.Rd
 267df66f00fc7ba632ed60fde355dd37 *man/zz_spmd_control.Rd
@@ -257,7 +257,7 @@ a887c74e48a5135bf9fc2fd833e8aa6f *man/zz_comm_internal.Rd
 c4fa789024138dcd3bad3e9796e1b6d1 *src/Makevars.in
 66882cbb02b5f10ae69ef89f542fe185 *src/Makevars.win
 3d79c21d8b3b467eb28daaf614d26f06 *src/comm_api.h
-2a170023f80afaa61155ac5d2b7ab60a *src/comm_errors.c
+1d1c584af92ad1a344f66c3a4a6875a6 *src/comm_errors.c
 210b027285cd6c5f9989235ff61ba258 *src/comm_sort_double.c
 d7d3b138425fd57a57e278d5c0ae9ad4 *src/comm_sort_integer.c
 f57db0b72747acb829293e1c3ccc4d8b *src/install.libs.R
@@ -265,7 +265,7 @@ f57db0b72747acb829293e1c3ccc4d8b *src/install.libs.R
 8c7abc334d62b62e4815473803ce8151 *src/pkg_constant.h
 a368ac916feb18b9672f9dd6eb629972 *src/pkg_dl.c
 6b401bcab487606d7fcaa3075716825a *src/pkg_global.h
-68663a374529874dbfadc509c885e915 *src/pkg_tools.c
+377574a62ec4ed173861baf78fef966f *src/pkg_tools.c
 97058dfcda8a5c59adb8d4ca259e9f3b *src/spmd.c
 8e2f20428dd98a0d5e1e47bb42305576 *src/spmd.h
 873278e36d34f4ec103a52e91d2168ff *src/spmd_allgather.c
@@ -287,7 +287,7 @@ ba93b94b81e71343d26ffe735e48bd6d *src/spmd_scatter.c
 81799e3915dae90313c0a15383ea94dd *src/spmd_send.c
 9a6547f9864eb58d6666d50e9a8de082 *src/spmd_sendrecv.c
 e2e40f04afc2c4e20b8640948c5ff6aa *src/spmd_sendrecv_replace.c
-c148a83c1a3dca54ab424e7df117f6fd *src/spmd_tool.c
+a8930e2b5dd4b503b9cdcf46d869fc30 *src/spmd_tool.c
 96b2015c2e2b9ef75b99b5d203dae188 *src/spmd_utility.c
 618f03835d72e3d317b0a4deebb353f6 *src/spmd_wait.c
 305cece008dde98982255587837d60b1 *src/zzz.c
