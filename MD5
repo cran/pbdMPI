@@ -1,6 +1,6 @@
 e879eaad64aab8e1f8e63e298f5cea28 *COPYING
-b6a35213aaf68095fd0cba4dea35c935 *ChangeLog
-20a2e071571144fffd7b41713d60fde6 *DESCRIPTION
+9207cc78aa7e6ca7be8b5d35b627ac48 *ChangeLog
+30dd62487f42a2c19e70cfc3db05be5b *DESCRIPTION
 5ceb32a202ce7770d8e7c2d80427cc0c *INSTALL
 e8656e9d505c26d776c9e9df2f186f41 *NAMESPACE
 e65685d28ecc6253c081d6a595d882f0 *R/000_globalVariables.r
@@ -74,8 +74,8 @@ fae63d07026f742625fe1d0b0918ae64 *R/util_execmpi.r.in
 a2dac011504e0ad72c0016c4663903cf *R/zzz.r.in
 bc263d8b708692e0965b454b225448fa *README.md
 cddad26ab46d27a31cdede710168732f *cleanup
-344f48b1efcd43bf999113b4331b1aac *configure
-0c1b2e89685884a3e4e4e55ee561ebc2 *configure.ac
+751ff1a9221988e26cdcd7aaa7d0cdfa *configure
+eccf6e64e6c0c76409cd89f89d813239 *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
 51c0da8b4926069e25642e264ef4f469 *demo/00Index
 4a84ff51f93eae04ed3d1d510508889f *demo/allgather.r
