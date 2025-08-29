@@ -1,8 +1,8 @@
 Package: pbdMPI
-Version: 0.5-3
+Version: 0.5-4
 Title: R Interface to MPI for HPC Clusters (Programming with Big Data
         Project)
-Date: 2025-04-12
+Date: 2025-08-25
 Authors@R: c(person("Wei-Chen", "Chen", role = c("aut", "cre"), email =
         "wccsnow@gmail.com"),
         person("George", "Ostrouchov", role = "aut"),
@@ -33,7 +33,7 @@ URL: https://pbdr.org/
 BugReports: https://github.com/snoweye/pbdMPI/issues
 NeedsCompilation: yes
 Maintainer: Wei-Chen Chen <wccsnow@gmail.com>
-Packaged: 2025-04-13 00:47:01 UTC; snoweye
+Packaged: 2025-08-28 22:34:12 UTC; snoweye
 Author: Wei-Chen Chen [aut, cre],
   George Ostrouchov [aut],
   Drew Schmidt [aut],
@@ -45,4 +45,4 @@ Author: Wei-Chen Chen [aut, cre],
   Sebastien Lamy de la Chapelle [aut] (fix check type for send/recv long
     vectors)
 Repository: CRAN
-Date/Publication: 2025-04-13 05:00:11 UTC
+Date/Publication: 2025-08-29 20:50:02 UTC
